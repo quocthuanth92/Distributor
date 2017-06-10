@@ -1,15 +1,10 @@
-# RimSigns
-Chia sẻ mã nguồn MVC
+# Thuan Tran
+Mã Nguồn Distributor
 
 # Database
-Sử dụng SQL Server 2012 SP1 trở lên.
-
-# Account
-sopiaxk/123456
+Sử dụng SQL Server 2012 trở lên.
 
 # Liên hệ:
-sopiaxk@gmail.com hoặc sopiaxk@outlook.com
+thuantq.uit@gmail.com
 
 # Nguồn và tác giả
-- Nguồn: http://sinhvienit.net/forum/share-source-code-asp-net-mvc-ef-sql-server-boostrap.368446.html
-- Tác giả: chinhdv (người chia sẻ).
