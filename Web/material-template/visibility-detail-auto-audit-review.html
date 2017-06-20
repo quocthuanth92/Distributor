@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html class="nav-mini">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="height=device-height,width=device-width,initial-scale=1.0,maximum-scale=1.0, user-scalable=no">
+<link href="img/favicon.png" rel="shortcut icon">
+<link rel="stylesheet" type="text/css" href="css/jquery.theme.default.css">
+<link rel="stylesheet" type="text/css" href="css/boothstrap.css">
+<link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
+<link rel="stylesheet" type="text/css" href="css/dragtable.css">
+<link rel="stylesheet" type="text/css" href="css/leaflet.css">
+
+<link rel="stylesheet" type="text/css" href="css/component.css">
+<link rel="stylesheet" type="text/css" href="css/icon.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/final.css">
+
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.cookie.js"></script>
+<script src="js/jquery.tablesorter.2.28.10.js"></script>
+<script src="js/jquery.tablesorter.widgets.2.28.10.js"></script>
+<script src="js/widget-columnSelector.js"></script>
+
+<script src="js/widget-scroller.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/angular.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/jquery.dragtable.js"></script>
+<script src="js/leaflet.js"></script>
+<script src="js/ui.js"></script>
+<title>DMSpro eTool</title>
+</head>
+<body class="blue">
+<div class="container">
+	<div class="header block-theme">
+		<div class="insider">
+			<div class="logo-box">
+				<a class="logo-text" href="index.html">DMSpro eTool</a>
+			</div>
+			<div class="menu-box">
+				<a class="btn-navigation" href="javascript:void(0)"></a>
+				<h1 class="page-title">Detail auto audit review</h1>
+				<div class="log-box">
+					<ul>
+						<li>
+							<div class="fl p-10-0 user-account">
+								<span>Hello</span> 
+								<a href="javascript:void(0)">Thuan.Tran</a> 
+							</div>
+							<a href="javascript:void(0)">
+								<figure class="mini-circle-box fl mr-5">
+									<img alt="Thuan.Tran" src="img/employee/1.jpg">
+								</figure>
+							</a>
+						</li>
+						<li class="Not audittice">
+							<a href="javascript:void(0)">
+								<i class="icon-etool-bell icon-etool-white"></i><span class="count">9</span>
+							</a>
+							<div>
+								<div class="title block-theme">
+									<h2>Not audittice</h2>
+									<span class="btn-close">
+										<a href="javascript:void(0)"><i class="icon-delete icon-white"></i></a>
+									</span>
+								</div>
+								<div class="block-content">
+									<ul>
+										<li>
+											<div class="mini-square-box fl mr-10">
+												<a href="javascript:void(0)"><img src="img/outlet/outlet-2.jpg" /></a>
+											</div>
+											<div class="describe">
+												<h3>Cô Ba outlet</h3>
+												<p>
+													Route: RE09118<br/>
+													Employee name: Nguyễn Hữu Phước<br/>
+													Employee code: NV0978
+												</p>
+											</div>
+										</li>
+										<li>
+											<div class="mini-square-box fl mr-10">
+												<a href="javascript:void(0)"><img src="img/outlet/outlet-1.jpg" /></a>
+											</div>
+											<div class="describe">
+												<h3>Family Smart Convenient Market</h3>
+												<p>
+													Route: RE07113<br/>
+													Employee name: Nguyễn Văn Thành<br/>
+													Employee code: NV0918
+												</p>
+											</div>
+										</li>
+										<li>
+											<div class="mini-square-box fl mr-10">
+												<a href="javascript:void(0)"><img src="img/outlet/outlet-3.jpg" /></a>
+											</div>
+											<div class="describe">
+												<h3>Cửa hàng tạp hóa chú Tư Dzềnh </h3>
+												<p>
+													Route: RE07115<br/>
+													Employee name: Ngô Thị Trúc<br/>
+													Employee code: NV0966
+												</p>
+											</div>
+										</li>
+										<li>
+											<div class="mini-square-box fl mr-10">
+												<a href="javascript:void(0)"><img src="img/outlet/outlet-2.jpg" /></a>
+											</div>
+											<div class="describe">
+												<h3>Cửa hàng tạp hóa cô Tư ngã tư Bảy Hiền</h3>
+												<p>
+													Route: RE08116<br/>
+													Employee name: Nguyễn Hữu Phước<br/>
+													Employee code: NV0972
+												</p>
+											</div>
+										</li>
+										<li>
+											<div class="mini-square-box fl mr-10">
+												<a href="javascript:void(0)"><img src="img/outlet/outlet-1.jpg" /></a>
+											</div>
+											<div class="describe">
+												<h3>BNot auditod Sttore</h3>
+												<p>
+													Route: RE04111<br/>
+													Employee name: Nguyễn Văn Thành<br/>
+													Employee code: NV0971
+												</p>
+											</div>
+										</li>
+										<li>
+											<div class="mini-square-box fl mr-10">
+												<a href="javascript:void(0)"><img src="img/outlet/outlet-3.jpg" /></a>
+											</div>
+											<div class="describe">
+												<h3>Co Sau outlet</h3>
+												<p>
+													Route: RE07513<br/>
+													Employee name: Ngô Thị Trúc<br/>
+													Employee code: NV0809
+												</p>
+											</div>
+										</li>
+										<li>
+											<div class="mini-square-box fl mr-10">
+												<a href="javascript:void(0)"><img src="img/outlet/outlet-2.jpg" /></a>
+											</div>
+											<div class="describe">
+												<h3>Nguyen Nam outlet</h3>
+												<p>
+													Route: RE09111<br/>
+													Employee name: Nguyễn Hữu Phước<br/>
+													Employee code: NV0911
+												</p>
+											</div>
+										</li>
+										<li>
+											<div class="mini-square-box fl mr-10">
+												<a href="javascript:void(0)"><img src="img/outlet/outlet-1.jpg" /></a>
+											</div>
+											<div class="describe">
+												<h3>Gmart Fastfood</h3>
+												<p>
+													Route: RE09125<br/>
+													Employee name: Nguyễn Văn Thành<br/>
+													Employee code: NV0432
+												</p>
+											</div>
+										</li>
+										<li>
+											<div class="mini-square-box fl mr-10">
+												<a href="javascript:void(0)"><img src="img/outlet/outlet-3.jpg" /></a>
+											</div>
+											<div class="describe">
+												<h3>Thành Trung co.op</h3>
+												<p>
+													Route: RE02118<br/>
+													Employee name: Ngô Thị Trúc<br/>
+													Employee code: NV0118
+												</p>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</li>
+						<li class="language">
+							<a href="javascript:void(0)">
+								<i class="icon-etool-global icon-etool-white"></i>
+							</a>
+							<div>
+								<ul>
+									<li class="selected">
+										<a href="javascript:void(0)">
+											Tiếng Việt
+										</a>
+									</li>
+									<li>
+										<a href="javascript:void(0)">
+											English
+										</a>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li>
+							<button class="btn btn-default"><i class="icon-logout icon-black"></i></button>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="navigation">
+		<div class="nav-box">
+			<ul>
+				<li>
+					<a class="icon_has-child" href="javascript:void(0)">
+						<i class="icon-etool-qlik icon-etool-black"></i>
+						<span class="tooltip"><div class="arrow-left"><i class="icon-left"></i></div>Business Intelligence</span>
+					</a>
+					<ul>
+						<li>
+							<a href="bi-sales-situation.html">
+								<span class="tooltip">Sales Situation</span>
+							</a>
+						</li>
+						<li>
+							<a href="bi-inventory-situation.html">
+								<span class="tooltip">Inventory Situation</span>
+							</a>
+						</li>
+						<li>
+							<a href="bi-coverage-situation.html">
+								<span class="tooltip">Coverage Situation</span>
+							</a>
+						</li>
+						<li>
+							<a href="bi-forecast.html">
+								<span class="tooltip">Sales Forecasting</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a class="icon_has-child" href="javascript:void(0)">
+						<i class="icon-etool-esri icon-etool-black"></i>
+						<span class="tooltip"><div class="arrow-left"><i class="icon-left"></i></div>Decision Assistance</span>
+					</a>
+					<ul>
+						<li>
+							<a href="gis-transport-intelligence.html">
+								<span class="tooltip">Transport Intelligence</span>
+							</a>
+						</li>
+						<li>
+							<a href="gis-tapestry-segmentation.html">
+								<span class="tooltip">Tapestry Segmentation</span>
+							</a>
+						</li>
+						<li>
+							<a href="gis-demographic.html">
+								<span class="tooltip">Demographic</span>
+							</a>
+						</li>
+						<li>
+							<a href="gis-diversity-index.html">
+								<span class="tooltip">Diversity Index</span>
+							</a>
+						</li>
+						<li>
+							<a href="gis-education-situation.html">
+								<span class="tooltip">Education Situation</span>
+							</a>
+						</li>
+						<li>
+							<a href="gis-unemployment.html">
+								<span class="tooltip">Unemployment rate</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a class="icon_has-child" href="javascript:void(0)">
+						<i class="icon-etool-system-management icon-etool-black"></i>
+						<span class="tooltip"><div class="arrow-left"><i class="icon-left"></i></div>System management</span>
+					</a>
+					<ul>
+						<li>
+							<a href="manage-permission-by-role.html">
+								<span class="tooltip">Permission by role</span>
+							</a>
+						</li>
+						<li>
+							<a href="manage-user-list.html">
+								<span class="tooltip">User list</span>
+							</a>
+						</li>
+						<li>
+							<a href="manage-role.html">
+								<span class="tooltip">Manage  role</span>
+							</a>
+						</li>
+						<li>
+							<a href="manage-language.html">
+								<span class="tooltip">Language</span>	
+							</a>
+						</li>
+						<li>
+							<a href="manage-menu-config.html">
+								<span class="tooltip">Config menu</span>
+							</a>
+						</li>
+						<li>
+							<a href="manage-product.html">
+								<span class="tooltip">Manage product</span>
+							</a>
+						</li>
+						<li>
+							<a href="manage-user-history.html">
+								<span class="tooltip">User history</span>
+							</a>
+						</li>
+						<li>
+							<a href="manage-reason.html">
+								<span class="tooltip">Image audit reason</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+				
+				<li>
+					<a class="icon_has-child" href="javascript:void(0)">
+						<i class="icon-etool-report icon-etool-black"></i>
+						<span class="tooltip"><div class="arrow-left">
+						<i class="icon-left"></i></div>Report</span>
+					</a>
+					<ul>
+						<li>
+							<a href="report-visited.html">
+								<span class="tooltip">Daily visit</span>
+							</a>
+						</li>
+						<li>
+							<a href="report-synchroNot auditus.html">
+								<span class="tooltip">PDA synchroNot auditus situation</span>
+							</a>
+						</li>
+						<li>
+							<a href="report-visit-result.html">
+								<span class="tooltip">Visit result</span>
+							</a>
+						</li>
+						<li>
+							<a href="report-sale-index.html">
+								<span class="tooltip">Sales indicator</span>
+							</a>
+						</li>
+						<li>
+							<a href="report-outlet-without-coordinates.html">
+								<span class="tooltip">Outlet without coordinates</span>
+							</a>
+						</li>
+						<li>
+							<a href="report-base-result.html">
+								<span class="tooltip">Base visit result</span>
+							</a>
+						</li>
+						<li>
+							<a href="report-working-weekly.html">
+								<span class="tooltip">Working weekly</span>
+							</a>
+						</li>
+						<li>
+							<a href="report-timekeeping.html">
+								<span class="tooltip">Timekeeping</span>
+							</a>
+						</li>
+						<li>
+							<a href="report-manual-audit-result.html">
+								<span class="tooltip">Manual audit result</span>
+							</a>
+						</li>
+						<li>
+							<a href="report-auto-assume-result.html">
+								<span class="tooltip">Auto audit result</span>
+							</a>
+						</li>
+						<li>
+							<a href="report-auto-assume-performance.html">
+								<span class="tooltip">Auto audit performance</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+				
+				<li>
+					<a class="icon_has-child" href="javascript:void(0)">
+						<i class="icon-etool-image icon-etool-black"></i>
+						<span class="tooltip"><div class="arrow-left"><i class="icon-left"></i></div>Visibility</span>
+					</a>
+					<ul>
+						<li>
+							<a href="visibility-define-display.html">
+								<span class="tooltip">Display period list</span>
+							</a>
+						</li>
+						<li>
+							<a href="visibility-assign-outlet-to-auditor.html">
+								<span class="tooltip">Allocate outlet to auditor</span>	
+							</a>
+						</li>
+						<li>
+							<a href="visibility-image-assume.html">
+								<span class="tooltip">Display image audit</span>
+							</a>
+						</li>
+						<li>
+							<a href="visibility-review-assume.html">
+								<span class="tooltip">Manual audit result review</span>
+							</a>
+						</li>
+						<li class="selected">
+							<a href="visibility-auto-image-assume.html">
+								<span class="tooltip">Auto audit result review</span>
+							</a>
+						</li>
+						<li>
+							<a href="visibility-report-deny-image.html">
+								<span class="tooltip">Denied image list</span>
+							</a>
+						</li>
+						<li>
+							<a href="visibility-auto-image-assume.html">
+								<span class="tooltip">Auto image audit</span>
+							</a>
+						</li>
+						<li>
+							<a href="visibility-baseline-display.html">
+								<span class="tooltip">Baseline display program</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a class="icon_has-child" href="javascript:void(0)">
+						<i class="icon-etool-calendar icon-etool-black"></i>
+						<span class="tooltip"><div class="arrow-left"><i class="icon-left"></i></div>eCalendar</span>
+					</a>
+					<ul>
+						<li>
+							<a href="scheduler.html">
+								<span class="tooltip">scheduler</span>
+							</a>
+						</li>
+						<li>
+							<a href="scheduler-pending.html">
+								<span class="tooltip">Pending</span>	
+							</a>
+						</li>
+						<li>
+							<a href="scheduler-monitoring.html">
+								<span class="tooltip">Monitoring</span>	
+							</a>
+						</li>
+						<li>
+							<a href="scheduler-result.html">
+								<span class="tooltip">Result</span>	
+							</a>
+						</li>
+						<li>
+							<a href="scheduler-review.html">
+								<span class="tooltip">Review</span>	
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="sales-auditor.html">
+						<i class="icon-etool-saleman-route icon-etool-black"></i>
+						<span class="tooltip">Sales auditor</span>
+					</a>
+				</li>
+				<li>
+					<a href="route-performance.html">
+						<i class="icon-etool-performance icon-etool-black"></i>
+						<span class="tooltip">Route optimize</span>
+					</a>
+				</li>
+				<li>
+					<a href="index.html">
+						<i class="icon-etool-mcp-situation icon-etool-black"></i>
+						<span class="tooltip">Coverage monitoring</span>
+					</a>
+				</li>
+				
+			</ul>
+		</div>
+		<div class="color-box">
+			<ul>
+				<li class="theme-option">
+					<a href="javascript:void(0)">
+						<i class="icon-etool-theme icon-etool-black"></i>
+						<span class="tooltip">
+							Color palette
+							<span class="circle circle-red" theme="red"></span>
+							<span class="circle circle-orange" theme="orange"></span>
+							<span class="circle circle-cyan" theme="cyan"></span>
+							<span class="circle circle-blue" theme="blue"></span>
+							<span class="circle circle-magenta" theme="magenta"></span>
+						</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="content">
+		<div class="insider">
+			<div class="content-body row">
+				<div class="img-content">
+					<div class="img-box">
+						<div class="img-all-box">
+							<div class="img-big-box img-current-template">
+								<div class="img-big-insider">
+									<div class="title">
+										<h3>Planogram</h3>
+										<div class="button-mini-box">
+											<button class="clockwise"><i class="icon-rotate-clockwise m-0"></i></button>
+											<button class="counter-clockwise"><i class="icon-rotate-counter-clockwise m-0"></i></button>
+										</div>
+									</div>
+									<img src="img/visibility/planogram.jpg" />
+								</div>
+							</div>
+							<div class="img-big-box img-current-assume">
+								<div class="img-big-insider">
+									<div class="title">
+										<h3>Audit image 27/10/2015</h3>
+										<div class="button-mini-box">
+											<button class="clockwise"><i class="icon-rotate-clockwise m-0"></i></button>
+											<button class="counter-clockwise"><i class="icon-rotate-counter-clockwise m-0 "></i></button>
+										</div>
+									</div>
+									<img src="img/visibility/img-big-2.jpg" />
+								</div>
+							</div>
+							<div class="img-scroll-box img-assumed">
+								<div class="img-scroll-insider mt-10">
+									<div class="img-mini-box">
+										<h3>07/10/2013</h3>
+										<div class="square-box">
+											<a href="javascript:void(0)">
+												<img src="img/visibility/img-small-1.jpg" />
+											</a>
+										</div>
+									</div>
+									<div class="img-mini-box">
+										<h3>14/10/2013</h3>
+										<div class="square-box">
+											<a href="javascript:void(0)">
+												<img src="img/visibility/img-small-2.jpg" />
+											</a>
+										</div>
+									</div>
+									<div class="img-mini-box">
+										<h3>21/10/2013</h3>
+										<div class="square-box">
+											<a href="javascript:void(0)">
+												<img src="img/visibility/img-small-4.jpg" />
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="img-assume">
+						<div class="img-assume-content">
+							<div class="item w-100pr">
+								<button class="fl"><i class="icon-go-back"></i></button>
+								<div class="input-group fl">
+									<input type="text" class="form-control txt-red bold" value="Cửa hàng Cô Mai Ngã Tư Văn Hiến" aria-label="..." >
+									<div class="input-group-btn">
+										<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="caret"></span></button>
+										<ul class="dropdown-menu dropdown-menu-right">
+											<li>
+												<table class="table table-striped nowrap m-0">
+													<thead class="block-theme">
+														<tr>
+															<th>#</th>
+															<th>Outlet name</th>
+															<th>Distributor name</th>
+															<th>Distributor code</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr class="txt-red bold">
+															<td>1</td>
+															<td>Cửa hàng Cô Mai Ngã Tư Văn Hiến</td>
+															<td>10002774</td>
+															<td>Công ty TNHH Liêm Phú</td>
+														</tr>
+														<tr class="txt-blue bold">
+															<td>2</td>
+															<td>Cửa hàng Quế Trân</td>
+															<td>10002774</td>
+															<td>Công ty TNHH Lê Gia Phát</td>
+														</tr>
+														<tr class="txt-green bold">
+															<td>3</td>
+															<td>Tạp Hóa cô Năm</td>
+															<td>10002774</td>
+															<td>Công ty TNHH Đại Kim</td>
+														</tr>
+													</tbody>
+												</table>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<button class="fl"><i class="icon-go-next"></i></button>
+								<button class="btn-refresh fl" title="Refresh"><i class="icon-update"></i></button>
+							</div>
+							<table>
+								<thead>
+									<tr>
+										<th>Outlet avatar</th>
+										<th>Audit image</th>
+										<th>Description</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>
+											<div class="square-box m-0">
+												<img src="img/visibility/img-small-3.jpg" />
+											</div>
+										</td>
+										<td>
+											<div class="square-box  m-0">
+												<img src="img/visibility/img-small-5.jpg" />
+											</div>
+										</td>
+										<td>
+											<p class="p-0 m-0">
+												SM: Nguyễn Văn An<br/>
+												Capture date: 30/03/2015<br/>
+												Distance SM-Outlet: 5.5m<br/>
+												Auditor: Lại Văn Lang<br/>
+												Audit date: 31/03/2015
+											</p>
+										</td>
+									</tr>
+									<tr>
+										<td colspan="3" class="p-0">
+											<div class="img-scroll-box">
+												<div class="img-scroll-insider">
+													<ul>
+														<li>
+															<div class="img-mini-box">
+																<h3>27/10/2013</h3>
+																<div class="square-box">
+																	<a href="javascript:void(0)">
+																		<img src="img/visibility/img-small-1.jpg" />
+																	</a>
+																</div>
+																<div class="assumer bold">Not audit</div>
+															</div>
+														</li>
+														<li>
+															<div class="img-mini-box">
+																<h3>27/10/2013</h3>
+																<div class="square-box">
+																	<a href="javascript:void(0)">
+																		<img src="img/visibility/img-small-2.jpg" />
+																	</a>
+																</div>
+																<div class="assumer bold">Not audit</div>
+															</div>
+														</li>
+														<li>
+															<div class="img-mini-box">
+																<h3>27/10/2013</h3>
+																<div class="square-box">
+																	<a href="javascript:void(0)">
+																		<img src="img/visibility/img-small-3.jpg" />
+																	</a>
+																</div>
+																<div class="assumer bold">Not audit</div>
+															</div>
+														</li>
+														<li>
+															<div class="img-mini-box">
+																<h3>27/10/2013</h3>
+																<div class="square-box">
+																	<a href="javascript:void(0)">
+																		<img src="img/visibility/img-small-1.jpg" />
+																	</a>
+																</div>
+																<div class="assumer bold">Not audit</div>
+															</div>
+														</li>
+														<li>
+															<div class="img-mini-box">
+																<h3>27/10/2013</h3>
+																<div class="square-box">
+																	<a href="javascript:void(0)">
+																		<img src="img/visibility/img-small-2.jpg" />
+																	</a>
+																</div>
+																<div class="assumer bold">Not audit</div>
+															</div>
+														</li>
+														<li>
+															<div class="img-mini-box">
+																<h3>27/10/2013</h3>
+																<div class="square-box">
+																	<a href="javascript:void(0)">
+																		<img src="img/visibility/img-small-3.jpg" />
+																	</a>
+																</div>
+																<div class="assumer bold">Not audit</div>
+															</div>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<table>
+								<thead>
+									<tr>
+										<th>Audit type</th>
+										<th>Audit reason</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Matched 3 images</td>
+										<td>
+											<label><input name="mathed" type="radio" checked />Yes</label>
+											<label><input name="mathed" type="radio" />No</label>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<label><input name="fake" type="radio" checked />Reality</label>
+											<label><input name="fake" type="radio" />Fake</label>
+										</td>
+										<td>
+											<select disabled>
+												<option>Choose reason</option>
+												<option>Blue image</option>
+												<option>Wrong format</option>
+												<option>Shooting wrong angle</option>
+											</select>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<label><input name="standard" type="radio" checked />Regular</label>
+											<label><input name="standard" type="radio" />Không Regular</label>
+										</td>
+										<td>
+											<select disabled>
+												<option>Choose reason</option>
+												<option>Blue image</option>
+												<option>Wrong format</option>
+												<option>Shooting wrong angle</option>
+											</select>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<label><input name="good" type="radio" checked />Achieve</label>
+											<label><input name="good" type="radio" />Không Achieve</label>
+										</td>
+										<td>
+											<select disabled>
+												<option>Choose reason</option>
+												<option>Blue image</option>
+												<option>Wrong format</option>
+												<option>Shooting wrong angle</option>
+											</select>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<label><input name="okay" type="radio" />Approved</label>
+											<label><input name="okay" type="radio" checked />Denied</label>
+										</td>
+										<td>
+											<select>
+												<option>Choose reason</option>
+												<option>Blue image</option>
+												<option>Wrong format</option>
+												<option>Shooting wrong angle</option>
+											</select>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="button-box align-center">
+							<button data-toggle="modal" data-target="#product-list" title="Numeric"><i class="icon-submit"></i>Numeric</button>
+							<button class="btn-green" title="Approve"><i class="icon-confirm icon-white"></i>Approve</button>
+							<button class="btn-red" title="Deny"><i class="icon-delete icon-white"></i>Deny</button>
+							<span class="button">
+								<a href="visibility-auto-image-assume.html"><i class="icon-back"></i>Back</a>
+							</span>
+						</div>
+						<div id="product-list" class="modal fade" role="dialog">
+							<div class="modal-dialog w-90pr mw-1000 bottom">
+								<!-- Modal content-->
+								<div class="modal-content">
+									<div class="modal-header block-theme">
+										<button type="button" class="close" data-dismiss="modal"><i class="icon-delete icon-white"></i></button>
+										<h4 class="modal-title">Product list to present audit</h4>
+									</div>
+									<div class="modal-body p-0">
+										<div class="table-box table-wrapper table-fixed-height">
+											<table class="tablesort table-bordered">
+												<thead>
+													<tr>
+														<th>Present</th>
+														<th>#</th>
+														<th>Product name</th>
+														<th>Manufacturer</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td class="align-center"><input type="checkbox" /></td>
+														<td class="align-right">1</td>
+														<td>Trà xanh 0 độ</td>
+														<td>NSX001</td>
+													</tr>
+													<tr>
+														<td class="align-center"><input type="checkbox" /></td>
+														<td class="align-right">2</td>
+														<td>Trà C2</td>
+														<td>NSX002</td>
+													</tr>
+													<tr>
+														<td class="align-center"><input type="checkbox" /></td>
+														<td class="align-right">3</td>
+														<td>Trà xanh 0 độ</td>
+														<td>NSX001</td>
+													</tr>
+													<tr>
+														<td class="align-center"><input type="checkbox" /></td>
+														<td class="align-right">4</td>
+														<td>Trà C2</td>
+														<td>NSX002</td>
+													</tr>
+													<tr>
+														<td class="align-center"><input type="checkbox" /></td>
+														<td class="align-right">5</td>
+														<td>Trà xanh 0 độ</td>
+														<td>NSX001</td>
+													</tr>
+													<tr>
+														<td class="align-center"><input type="checkbox" /></td>
+														<td class="align-right">6</td>
+														<td>Trà C2</td>
+														<td>NSX002</td>
+													</tr>
+													<tr>
+														<td class="align-center"><input type="checkbox" /></td>
+														<td class="align-right">7</td>
+														<td>Trà xanh 0 độ</td>
+														<td>NSX001</td>
+													</tr>
+													<tr>
+														<td class="align-center"><input type="checkbox" /></td>
+														<td class="align-right">8</td>
+														<td>Trà C2</td>
+														<td>NSX002</td>
+													</tr>
+													<tr>
+														<td class="align-center"><input type="checkbox" /></td>
+														<td class="align-right">9</td>
+														<td>Trà xanh 0 độ</td>
+														<td>NSX001</td>
+													</tr>
+													<tr>
+														<td class="align-center"><input type="checkbox" /></td>
+														<td class="align-right">10</td>
+														<td>Trà C2</td>
+														<td>NSX002</td>
+													</tr>
+													<tr>
+														<td class="align-center"><input type="checkbox" /></td>
+														<td class="align-right">11</td>
+														<td>Trà xanh 0 độ</td>
+														<td>NSX001</td>
+													</tr>
+													<tr>
+														<td class="align-center"><input type="checkbox" /></td>
+														<td class="align-right">12</td>
+														<td>Trà C2</td>
+														<td>NSX002</td>
+													</tr>
+													<tr>
+														<td class="align-center"><input type="checkbox" /></td>
+														<td class="align-right">13</td>
+														<td>Trà xanh 0 độ</td>
+														<td>NSX001</td>
+													</tr>
+													<tr>
+														<td class="align-center"><input type="checkbox" /></td>
+														<td class="align-right">14</td>
+														<td>Trà C2</td>
+														<td>NSX002</td>
+													</tr>
+													<tr>
+														<td class="align-center"><input type="checkbox" /></td>
+														<td class="align-right">15</td>
+														<td>Trà C2</td>
+														<td>NSX002</td>
+													</tr>
+													<tr>
+														<td class="align-center"><input type="checkbox" /></td>
+														<td class="align-right">16</td>
+														<td>Trà xanh 0 độ</td>
+														<td>NSX001</td>
+													</tr>
+													<tr>
+														<td class="align-center"><input type="checkbox" /></td>
+														<td class="align-right">17</td>
+														<td>Trà C2</td>
+														<td>NSX012</td>
+													</tr>
+													<tr>
+														<td class="align-center"><input type="checkbox" /></td>
+														<td class="align-right">18</td>
+														<td>Trà xanh 0 độ</td>
+														<td>NSX021</td>
+													</tr>
+													<tr>
+														<td class="align-center"><input type="checkbox" /></td>
+														<td class="align-right">19</td>
+														<td>Trà C2</td>
+														<td>NSX022</td>
+													</tr>
+													<tr>
+														<td class="align-center"><input type="checkbox" /></td>
+														<td class="align-right">20</td>
+														<td>Trà 0 độ</td>
+														<td>NSX023</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>
