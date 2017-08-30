@@ -9,7 +9,8 @@ namespace CodeProject.Data.EntityFramework.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationDataLossAllowed = true;
         }
 
         protected override void Seed(CodeProject.Data.EntityFramework.CodeProjectDatabase context)
