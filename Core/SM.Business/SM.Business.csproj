@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp1.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="7.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SM.Common\SM.Common.csproj" />
+    <ProjectReference Include="..\SM.Data\SM.Data.csproj" />
+    <ProjectReference Include="..\SM.Entities\SM.Entities.csproj" />
+    <ProjectReference Include="..\SM.Interfaces\SM.Interfaces.csproj" />
+  </ItemGroup>
+
+</Project>
