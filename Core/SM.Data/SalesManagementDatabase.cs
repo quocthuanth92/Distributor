@@ -41,10 +41,10 @@ namespace SM.Data
         {
         }
 
-        //public SalesManagementDatabase()
-        //{
-        //    //ATT: I also don't understand why ef requires the parameterless constructor
-        //}
+        public SalesManagementDatabase()
+        {
+            //ATT: I also don't understand why ef requires the parameterless constructor
+        }
 
         /// <summary>
         /// Model Creation
@@ -54,10 +54,10 @@ namespace SM.Data
         {
             base.OnModelCreating(modelBuilder);
 
-            //foreach (var relationship in modelBuilder.Model.GetEntityTypes().SelectMany(e => e.GetForeignKeys()))
-            //{
-            //    relationship.DeleteBehavior = DeleteBehavior.Restrict;
-            //}
+
+            modelBuilder.Entity<ApplicationUser>().ToTable("UserProfile");
+            modelBuilder.Entity<IdentityRole>().ToTable("Role");
+            
 
             modelBuilder.Entity<Region>().HasKey(c => new { c.Id, c.RegionCode });
             modelBuilder.Entity<Region>().ToTable("dbo.Region");

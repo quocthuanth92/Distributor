@@ -57,7 +57,7 @@
   </ItemGroup>
 
   <Target Name="PrepublishScript" BeforeTargets="PrepareForPublish">
-    <Exec Command="bower install" />
+    <!--<Exec Command="bower install" />-->
     <Exec Command="dotnet bundle" />
   </Target>
 
@@ -69,6 +69,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\SM.ApiBusiness\SM.ApiBusiness.csproj" />
     <ProjectReference Include="..\SM.Business\SM.Business.csproj" />
     <ProjectReference Include="..\SM.Common\SM.Common.csproj" />
     <ProjectReference Include="..\SM.Data\SM.Data.csproj" />

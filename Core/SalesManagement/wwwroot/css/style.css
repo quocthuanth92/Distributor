@@ -1638,13 +1638,15 @@ table.dataTable thead .sorting_desc_disabled {
   padding-bottom: 30px;
 }
 .dataTables_length {
-  float: left;
+    float: left;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 .dataTables_filter label {
   margin-right: 5px;
 }
 .html5buttons {
-  float: right;
+  float: left;
 }
 .html5buttons a {
   border: 1px solid #e7eaec;
@@ -1888,7 +1890,7 @@ div.dt-button-info {
   border-radius: 1px;
   color: inherit;
   display: block;
-  padding: 6px 12px;
+  padding: 0px 12px;
   transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
   width: 100%;
   font-size: 14px;
