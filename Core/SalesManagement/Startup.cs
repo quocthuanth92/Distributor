@@ -12,13 +12,21 @@ using Microsoft.Extensions.Logging;
 using SalesManagement.Models;
 using SalesManagement.Services;
 using SM.Data;
+using SM.Common;
+using System.IO;
+using System.Globalization;
+using Microsoft.AspNetCore.Localization;
 
 namespace SalesManagement
 {
     public class Startup
     {
+        private readonly IHostingEnvironment _hostingEnvironment;
+
         public Startup(IHostingEnvironment env)
         {
+            _hostingEnvironment = env;
+
             var builder = new ConfigurationBuilder()
                 .SetBasePath(env.ContentRootPath)
                 .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
@@ -35,6 +43,7 @@ namespace SalesManagement
 
             builder.AddEnvironmentVariables();
             Configuration = builder.Build();
+            
         }
 
         public IConfigurationRoot Configuration { get; }
@@ -42,21 +51,21 @@ namespace SalesManagement
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddLocalization(opts => { opts.ResourcesPath = "SM.Resources"; });
+
             // Add framework services.
             services.AddApplicationInsightsTelemetry(Configuration);
 
             services.AddDbContext<SalesManagementDatabase>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
-
-            //services.AddDbContext<SalesManagementDatabase>(options =>
-            //    options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<SalesManagementDatabase>()
                 .AddDefaultTokenProviders();
 
-            services.AddMvc();
+            services.AddMvc()
+                .AddViewLocalization()
+                .AddDataAnnotationsLocalization();
 
             // Add application services.
             services.AddTransient<IEmailSender, AuthMessageSender>();
@@ -66,6 +75,11 @@ namespace SalesManagement
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
+            var moduleLogFolder = new DirectoryInfo(Path.Combine(_hostingEnvironment.ContentRootPath, "Logs\\"));
+            CustomLog.LogPath = moduleLogFolder.FullName;
+
+            app.UseRequestLocalization(BuildLocalizationOptions());
+
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
@@ -98,5 +112,28 @@ namespace SalesManagement
             });
             
         }
+
+
+        #region Custom Localization
+        private RequestLocalizationOptions BuildLocalizationOptions()
+        {
+            var supportedCultures = new List<CultureInfo>
+            {
+                new CultureInfo("en-US"),
+                new CultureInfo("vi-VN"),
+            };
+
+            var options = new RequestLocalizationOptions
+            {
+                DefaultRequestCulture = new RequestCulture("en-US"),
+                SupportedCultures = supportedCultures,
+                SupportedUICultures = supportedCultures
+            };
+
+            return options;
+        }
+        #endregion
+
+
     }
 }

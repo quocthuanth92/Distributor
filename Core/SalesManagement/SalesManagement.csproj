@@ -26,6 +26,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="EPPlus.Core" Version="1.5.2" />
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="1.0.2" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.Cookies" Version="1.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics" Version="1.1.1" />
@@ -75,10 +76,15 @@
     <ProjectReference Include="..\SM.Data\SM.Data.csproj" />
     <ProjectReference Include="..\SM.Entities\SM.Entities.csproj" />
     <ProjectReference Include="..\SM.Interfaces\SM.Interfaces.csproj" />
+    <ProjectReference Include="..\SM.Resources\SM.Resources.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Update="Microsoft.NETCore.App" Version="1.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Logs\" />
   </ItemGroup>
 
 </Project>

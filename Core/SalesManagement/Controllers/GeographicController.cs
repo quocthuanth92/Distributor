@@ -4,6 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using SM.Common;
+using Microsoft.Extensions.Localization;
+using SM.Resources;
 
 namespace SalesManagement.Controllers
 {
@@ -12,6 +15,9 @@ namespace SalesManagement.Controllers
         // GET: Geographic
         public ActionResult Region()
         {
+
+            ViewBag.abc = Resource.Name;
+            CustomLog.LogError("sdsdsdsd");
             return View();
         }
 
