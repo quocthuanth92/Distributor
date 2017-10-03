@@ -15,7 +15,6 @@ namespace SalesManagement.Controllers
         // GET: Geographic
         public ActionResult Region()
         {
-
             ViewBag.abc = Resource.Name;
             CustomLog.LogError("sdsdsdsd");
             return View();

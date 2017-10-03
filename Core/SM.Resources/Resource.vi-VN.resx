@@ -126,6 +126,9 @@
   <data name="DisplayString" xml:space="preserve">
     <value>Trang demo</value>
   </data>
+  <data name="FormUpload" xml:space="preserve">
+    <value>Biểu mẫu tải file </value>
+  </data>
   <data name="Name" xml:space="preserve">
     <value>Tên</value>
   </data>

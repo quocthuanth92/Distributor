@@ -89,6 +89,24 @@ namespace SM.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Form Upload File.
+        /// </summary>
+        public static string FormUpload {
+            get {
+                return ResourceManager.GetString("FormUpload", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Upload File.
+        /// </summary>
+        public static string FromUpload {
+            get {
+                return ResourceManager.GetString("FromUpload", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Name.
         /// </summary>
         public static string Name {

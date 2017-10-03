@@ -15,12 +15,17 @@ namespace SM.Entities
         public string Code { get; set; }
 
         [Required]
+        [StringLength(250)]
         public string Name { get; set; }
+        [StringLength(30)]
         public string CountryCode { get; set; }
+        [StringLength(250)]
         public string CountryName { get; set; }
 
         [Required]
+        [StringLength(30)]
         public string ChannelCode { get; set; }
+        [StringLength(250)]
         public string ChannelName { get; set; }
         public bool Active { get; set; }
         public char Status { get; set; }
@@ -42,8 +47,11 @@ namespace SM.Entities
 
         [Key, Column(Order = 1)]
         [Required]
+        [StringLength(30)]
         public string TerrStructCode { get; set; }
+        [StringLength(250)]
         public string TerrStructName { get; set; }
+        [StringLength(30)]
         public string ParentCode { get; set; }
         public int Level { get; set; }
         public char Status { get; set; }
@@ -61,8 +69,11 @@ namespace SM.Entities
 
         [Key, Column(Order = 1)]
         [Required]
+        [StringLength(30)]
         public string TerrCode { get; set; }
+        [StringLength(250)]
         public string TerrName { get; set; }
+        [StringLength(30)]
         public string ParentCode { get; set; }
         public int Level { get; set; }
         public char Status { get; set; }

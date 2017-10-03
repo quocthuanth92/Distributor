@@ -43,10 +43,14 @@ namespace SM.Entities
         public bool GPSOutRouteLock { get; set; }
         public bool IsSundayRoute { get; set; }
         public bool IsVanSales { get; set; }
+        [StringLength(50)]
         public string BinCode { get; set; }
 
+        [StringLength(50)]
         public string ManageBy { get; set; }
+        [StringLength(50)]
         public string SalesMan { get; set; }
+        [StringLength(50)]
         public string OutRoute { get; set; }
         public string CheckIn { get; set; }
 
@@ -94,8 +98,11 @@ namespace SM.Entities
         [StringLength(50)]
         public string LocationCode { get; set; }
         public string LocationName { get; set; }
+        [StringLength(50)]
         public string DistributorCode { get; set; }
+        [StringLength(50)]
         public string BranchCode { get; set; }
+        [StringLength(50)]
         public string WarehouseCode { get; set; }
         public char Type { get; set; }
         public bool Monday { get; set; }

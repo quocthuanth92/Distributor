@@ -126,6 +126,12 @@
   <data name="DisplayString" xml:space="preserve">
     <value>This is a demo page</value>
   </data>
+  <data name="FormUpload" xml:space="preserve">
+    <value>Form Upload File</value>
+  </data>
+  <data name="FromUpload" xml:space="preserve">
+    <value>Upload File</value>
+  </data>
   <data name="Name" xml:space="preserve">
     <value>Name</value>
   </data>

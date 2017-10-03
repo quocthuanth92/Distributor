@@ -19,15 +19,18 @@ namespace SM.Entities
         [StringLength(30)]
         public string RegionCode { get; set; }
 
+        [StringLength(250)]
         public string RegionName { get; set; }
 
         [Required]
+        [StringLength(30)]
         public string CountryCode { get; set; }
 
-        public string CreateDate { get; set; }
+        public DateTime CreateDate { get; set; }
 
-        public string UpdateDate { get; set; }
+        public DateTime UpdateDate { get; set; }
 
+        [StringLength(50)]
         public string UpdateByCode { get; set; }
 
         [Required]
@@ -44,15 +47,18 @@ namespace SM.Entities
         [StringLength(30)]
         public string ProvinceCode { get; set; }
 
+        [StringLength(250)]
         public string ProvinceName { get; set; }
 
         [Required]
+        [StringLength(30)]
         public string RegionCode { get; set; }
 
-        public string CreateDate { get; set; }
+        public DateTime CreateDate { get; set; }
 
-        public string UpdateDate { get; set; }
+        public DateTime UpdateDate { get; set; }
 
+        [StringLength(50)]
         public string UpdateByCode { get; set; }
 
         [Required]
@@ -69,15 +75,18 @@ namespace SM.Entities
         [StringLength(30)]
         public string DistrictCode { get; set; }
 
+        [StringLength(250)]
         public string DistrictName { get; set; }
 
         [Required]
+        [StringLength(30)]
         public string ProvinceCode { get; set; }
 
-        public string CreateDate { get; set; }
+        public DateTime CreateDate { get; set; }
 
-        public string UpdateDate { get; set; }
+        public DateTime UpdateDate { get; set; }
 
+        [StringLength(50)]
         public string UpdateByCode { get; set; }
 
         [Required]
@@ -94,15 +103,18 @@ namespace SM.Entities
         [StringLength(30)]
         public string WardCode { get; set; }
 
+        [StringLength(250)]
         public string WardName { get; set; }
 
         [Required]
+        [StringLength(30)]
         public string DistrictCode { get; set; }
 
-        public string CreateDate { get; set; }
+        public DateTime CreateDate { get; set; }
 
-        public string UpdateDate { get; set; }
+        public DateTime UpdateDate { get; set; }
 
+        [StringLength(50)]
         public string UpdateByCode { get; set; }
 
         [Required]

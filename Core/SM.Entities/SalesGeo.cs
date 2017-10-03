@@ -17,6 +17,7 @@ namespace SM.Entities
 
         [StringLength(30)]
         public string SalesTerritoryCode { get; set; }
+        [StringLength(50)]
         public string SalesValueCode { get; set; }
         public char Status { get; set; }
         public string CompanyCode { get; set; }
@@ -36,10 +37,13 @@ namespace SM.Entities
 
         [StringLength(30)]
         public string SalesTerritoryCode { get; set; }
+        [StringLength(50)]
         public string SalesValueCode { get; set; }
 
         public char GeoType { get; set; }
+        [StringLength(50)]
         public string GeoCode { get; set; }
+        [StringLength(50)]
         public string GeoName { get; set; }
         public DateTime EffectiveDate { get; set; }
         public DateTime? EndDate { get; set; }
