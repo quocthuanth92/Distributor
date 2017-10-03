@@ -2,6 +2,7 @@
     ViewData["Title"] = "DataTables";
 }
 @using SM.Resources
+@using SM.Common
 <div class="row wrapper border-bottom white-bg page-heading">
     <div class="col-lg-10">
         <h2>@ViewBag.abc</h2>
@@ -37,8 +38,8 @@
                 </div>
                 <div class="ibox-content">
                     <p>Sign in today for more expirience.</p>
-                    
-                    <form id="form-upload-file" class="form-horizontal">
+                    @using(Html.BeginForm("Import", "Geographic", FormMethod.Post, new { @enctype = "multipart/form-data", @class = "form-horizontal" }))
+                    {
                         <div class="form-group">
                             <div class="col-lg-offset-2 col-lg-4 fileinput fileinput-new input-group" data-provides="fileinput">
                                 <div class="form-control" data-trigger="fileinput">
@@ -47,7 +48,7 @@
                                 <span class="input-group-addon btn btn-default btn-file">
                                     <span class="fileinput-new">Select file</span>
                                     <span class="fileinput-exists">Change</span>
-                                    <input type="file" name="...">
+                                    <input type="file" name="Attachment">
                                 </span>
                                 <a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
                             </div>
@@ -55,25 +56,25 @@
                         <div class="form-group">
                             <div class="col-lg-offset-2 col-lg-4">
                                 <div class="radio">
-                                    <input type="radio" name="option-update" value="option1" checked="checked">
+                                    <input type="radio" name="OptionImport" value="@OptionImport.IsAddUpdate" checked="checked">
                                     <label for="radio1">
                                         Tạo mới và Cập nhật nếu tồn tại
                                     </label>
                                 </div>
                                 <div class="radio">
-                                    <input type="radio" name="option-update" value="option2">
+                                    <input type="radio" name="OptionImport" value="@OptionImport.IsOnlyUpdate">
                                     <label for="radio2">
                                         Chỉ cập nhật nếu tồn tại
                                     </label>
                                 </div>
                                 <div class="radio">
-                                    <input type="radio" name="option-update" value="option1">
+                                    <input type="radio" name="OptionImport" value="@OptionImport.IsOnlyAdd">
                                     <label for="radio1">
                                         Chỉ tạo mới
                                     </label>
                                 </div>
                                 <div class="radio">
-                                    <input type="radio" name="option-update" value="option2">
+                                    <input type="radio" name="OptionImport" value="@OptionImport.IsOnlyInactive">
                                     <label for="radio2">
                                         Xóa nếu tồn tại
                                     </label>
@@ -85,7 +86,7 @@
                                 <button id="btnUpload" class="btn btn-sm btn-white" type="submit">Upload</button>
                             </div>
                         </div>
-                    </form>
+                    }
                 </div>
             </div>
         </div>
