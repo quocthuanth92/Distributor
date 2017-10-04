@@ -11,11 +11,21 @@ using SM.Common.ViewModel;
 using System.IO;
 using OfficeOpenXml;
 using System.Text;
+using Microsoft.AspNetCore.Hosting;
+using SM.Entities;
+using SM.Data.DataServices;
 
 namespace SalesManagement.Controllers
 {
     public class GeographicController : Controller
     {
+        private readonly IHostingEnvironment _hostingEnvironment;
+
+        public GeographicController(IHostingEnvironment hostingEnvironment)
+        {
+            _hostingEnvironment = hostingEnvironment;
+        }
+
         // GET: Geographic
         public ActionResult Region()
         {
@@ -110,29 +120,39 @@ namespace SalesManagement.Controllers
             {
                 try
                 {
-                    using (ExcelPackage excelPackage = new ExcelPackage(fileUpload))
+                    List<Province> listProvinces = new List<Province>();
+                    using (ExcelPackage excelPackage = new ExcelPackage(importMV.Attachment.OpenReadStream()))
                     {
                         StringBuilder sb = new StringBuilder();
-                        ExcelWorksheet worksheet = excelPackage.Workbook.Worksheets[1];
+                        ExcelWorksheet worksheet = excelPackage.Workbook.Worksheets.FirstOrDefault();
                         int rowCount = worksheet.Dimension.Rows;
                         int ColCount = worksheet.Dimension.Columns;
                         bool bHeaderRow = true;
-                        for (int row = 1; row <= rowCount; row++)
+                        for (int row = 2; row <= rowCount; row++)
                         {
-                            for (int col = 1; col <= ColCount; col++)
-                            {
-                                if (bHeaderRow)
-                                {
-                                    sb.Append(worksheet.Cells[row, col].Value.ToString() + "\t");
-                                }
-                                else
-                                {
-                                    sb.Append(worksheet.Cells[row, col].Value.ToString() + "\t");
-                                }
-                            }
-                            sb.Append(Environment.NewLine);
+                            Province province = new Province() {
+                                ProvinceCode = worksheet.Cells[row, 1].Value.ToString(),
+                                ProvinceName = worksheet.Cells[row, 2].Value.ToString(),
+                                RegionCode = worksheet.Cells[row, 1].Value.ToString(),
+                                CreateDate = DateTime.Now,
+                                UpdateDate = DateTime.Now,
+                                Active = true,
+                                UpdateByCode = "System"
+                            };
+                            listProvinces.Add(province);
                         }
-                        CustomLog.LogError(sb.ToString());
+                    }
+
+                    ProvinceDataService provinceDataService = new ProvinceDataService();
+
+                    if (listProvinces.Count > 0)
+                    {
+                        foreach(Province elm in listProvinces)
+                        {
+                            provinceDataService.Create(elm);
+                        }
+
+                        provinceDataService.CommitTransaction();
                     }
                 }
                 catch (Exception ex)

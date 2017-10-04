@@ -16,6 +16,8 @@ using SM.Common;
 using System.IO;
 using System.Globalization;
 using Microsoft.AspNetCore.Localization;
+using SM.Interfaces;
+using SM.Data.DataServices;
 
 namespace SalesManagement
 {
@@ -70,6 +72,8 @@ namespace SalesManagement
             // Add application services.
             services.AddTransient<IEmailSender, AuthMessageSender>();
             services.AddTransient<ISmsSender, AuthMessageSender>();
+            services.AddTransient<IDataRepository, EntityFrameworkService>();
+            services.AddTransient<IProvinceDataService, ProvinceDataService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -16,4 +16,16 @@ namespace SM.Interfaces
         Region Get(string regionCode);
         IList<Region> Gets(int currentPageNumber, int pageSize, string sortExpression, string sortDirection, out int totalRows);
     }
+
+    /// <summary>
+    /// Product Data Province
+    /// </summary>
+    public interface IProvinceDataService : IDataRepository, IDisposable
+    {
+        ResultMessage Create(Province province);
+        ResultMessage Update(Province province);
+        ResultMessage Delete(string provinceCode);
+        Region Get(string provinceCode);
+        IList<Region> Gets(int currentPageNumber, int pageSize, string sortExpression, string sortDirection, out int totalRows);
+    }
 }

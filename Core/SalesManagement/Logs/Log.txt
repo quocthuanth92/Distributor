@@ -1,33 +1,33 @@
 ----------
-03/10/2017 5:08:47 CH
+04/10/2017 5:16:39 CH
+Source:	SM.Data
+Type:	NullReferenceException
+Message:	Object reference not set to an instance of an object.
+Stack:	   at SM.Data.DataServices.ProvinceDataService.Create(Province province) in D:\Data\2.SalesManageProject\Core\SM.Data\DataServices\GeoDataService.cs:line 167
+   at SalesManagement.Controllers.GeographicController.Import(ImportExportMV importMV) in D:\Data\2.SalesManageProject\Core\SalesManagement\Controllers\GeographicController.cs:line 152
+----------
+04/10/2017 5:16:39 CH
 Message:	sdsdsdsd
 ----------
-03/10/2017 5:08:47 CH
+04/10/2017 5:18:07 CH
+Source:	SM.Data
+Type:	NullReferenceException
+Message:	Object reference not set to an instance of an object.
+Stack:	   at SM.Data.DataServices.ProvinceDataService.Create(Province province) in D:\Data\2.SalesManageProject\Core\SM.Data\DataServices\GeoDataService.cs:line 167
+   at SalesManagement.Controllers.GeographicController.Import(ImportExportMV importMV) in D:\Data\2.SalesManageProject\Core\SalesManagement\Controllers\GeographicController.cs:line 152
+----------
+04/10/2017 5:18:07 CH
 Message:	sdsdsdsd
 ----------
-03/10/2017 5:09:06 CH
-Source:	EPPlus.Core
-Type:	IndexOutOfRangeException
-Message:	Worksheet position out of range.
-Stack:	   at OfficeOpenXml.ExcelWorksheets.get_Item(Int32 PositionID)
-   at SalesManagement.Controllers.GeographicController.Import(ImportExportMV importMV) in D:\Data\2.SalesManageProject\Core\SalesManagement\Controllers\GeographicController.cs:line 116
-----------
-03/10/2017 5:09:06 CH
+04/10/2017 5:21:34 CH
 Message:	sdsdsdsd
 ----------
-03/10/2017 5:11:54 CH
-Source:	EPPlus.Core
-Type:	IndexOutOfRangeException
-Message:	Worksheet position out of range.
-Stack:	   at OfficeOpenXml.ExcelWorksheets.get_Item(Int32 PositionID)
-   at SalesManagement.Controllers.GeographicController.Import(ImportExportMV importMV) in D:\Data\2.SalesManageProject\Core\SalesManagement\Controllers\GeographicController.cs:line 116
+04/10/2017 5:22:43 CH
+Source:	SM.Data
+Type:	NullReferenceException
+Message:	Object reference not set to an instance of an object.
+Stack:	   at SM.Data.DataServices.ProvinceDataService.Create(Province province) in D:\Data\2.SalesManageProject\Core\SM.Data\DataServices\GeoDataService.cs:line 167
+   at SalesManagement.Controllers.GeographicController.Import(ImportExportMV importMV) in D:\Data\2.SalesManageProject\Core\SalesManagement\Controllers\GeographicController.cs:line 152
 ----------
-03/10/2017 5:12:02 CH
+04/10/2017 5:22:43 CH
 Message:	sdsdsdsd
-----------
-03/10/2017 6:33:30 CH
-Source:	EPPlus.Core
-Type:	IndexOutOfRangeException
-Message:	Worksheet position out of range.
-Stack:	   at OfficeOpenXml.ExcelWorksheets.get_Item(Int32 PositionID)
-   at SalesManagement.Controllers.GeographicController.Import(ImportExportMV importMV) in D:\Data\2.SalesManageProject\Core\SalesManagement\Controllers\GeographicController.cs:line 116
