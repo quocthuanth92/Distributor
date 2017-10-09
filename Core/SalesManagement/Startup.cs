@@ -56,10 +56,9 @@ namespace SalesManagement
             services.AddLocalization(opts => { opts.ResourcesPath = "SM.Resources"; });
 
             // Add framework services.
-            services.AddApplicationInsightsTelemetry(Configuration);
-
             services.AddDbContext<SalesManagementDatabase>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddApplicationInsightsTelemetry(Configuration);
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<SalesManagementDatabase>()
@@ -72,7 +71,6 @@ namespace SalesManagement
             // Add application services.
             services.AddTransient<IEmailSender, AuthMessageSender>();
             services.AddTransient<ISmsSender, AuthMessageSender>();
-            services.AddTransient<IDataRepository, EntityFrameworkService>();
             services.AddTransient<IProvinceDataService, ProvinceDataService>();
         }
 
@@ -112,7 +110,7 @@ namespace SalesManagement
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Dashboards}/{action=Dashboard_1}/{id?}");
+                    template: "{controller=Geographic}/{action=Region}/{id?}");
             });
             
         }

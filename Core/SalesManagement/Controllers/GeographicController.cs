@@ -14,21 +14,35 @@ using System.Text;
 using Microsoft.AspNetCore.Hosting;
 using SM.Entities;
 using SM.Data.DataServices;
+using SM.Interfaces;
+using SM.Data;
 
 namespace SalesManagement.Controllers
 {
     public class GeographicController : Controller
     {
         private readonly IHostingEnvironment _hostingEnvironment;
+        private readonly IProvinceDataService _provinceDataService;
 
-        public GeographicController(IHostingEnvironment hostingEnvironment)
+        public GeographicController(IHostingEnvironment hostingEnvironment, IProvinceDataService provinceDataService)
         {
+
             _hostingEnvironment = hostingEnvironment;
+            _provinceDataService = provinceDataService;
         }
 
         // GET: Geographic
         public ActionResult Region()
         {
+            using (SalesManagementDatabase context = new SalesManagementDatabase())
+            {
+                var list = context.Provinces.ToList();
+            }
+
+            _provinceDataService.CreateSession();
+            var abc = _provinceDataService.GetAll();
+            _provinceDataService.CommitTransaction(true);
+
             ViewBag.abc = Resource.Name;
             CustomLog.LogError("sdsdsdsd");
             return View();
@@ -143,16 +157,15 @@ namespace SalesManagement.Controllers
                         }
                     }
 
-                    ProvinceDataService provinceDataService = new ProvinceDataService();
-
                     if (listProvinces.Count > 0)
                     {
+                        _provinceDataService.CreateSession();
                         foreach(Province elm in listProvinces)
                         {
-                            provinceDataService.Create(elm);
+                            var abc = _provinceDataService.Create(elm);
                         }
 
-                        provinceDataService.CommitTransaction();
+                        _provinceDataService.CommitTransaction(true);
                     }
                 }
                 catch (Exception ex)

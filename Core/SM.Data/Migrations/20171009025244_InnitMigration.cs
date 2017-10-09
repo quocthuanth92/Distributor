@@ -5,12 +5,12 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace SM.Data.Migrations
 {
-    public partial class InitialMigration : Migration
+    public partial class InnitMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "AspNetRoles",
+                name: "Role",
                 columns: table => new
                 {
                     Id = table.Column<string>(nullable: false),
@@ -20,7 +20,7 @@ namespace SM.Data.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_AspNetRoles", x => x.Id);
+                    table.PrimaryKey("PK_Role", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -38,28 +38,34 @@ namespace SM.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "AspNetUsers",
+                name: "UserProfile",
                 columns: table => new
                 {
                     Id = table.Column<string>(nullable: false),
                     AccessFailedCount = table.Column<int>(nullable: false),
+                    Active = table.Column<bool>(nullable: false),
+                    Address = table.Column<string>(nullable: true),
                     ConcurrencyStamp = table.Column<string>(nullable: true),
                     Email = table.Column<string>(maxLength: 256, nullable: true),
                     EmailConfirmed = table.Column<bool>(nullable: false),
+                    FirstName = table.Column<string>(nullable: true),
+                    LastName = table.Column<string>(nullable: true),
                     LockoutEnabled = table.Column<bool>(nullable: false),
                     LockoutEnd = table.Column<DateTimeOffset>(nullable: true),
+                    MiddleName = table.Column<string>(nullable: true),
                     NormalizedEmail = table.Column<string>(maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(maxLength: 256, nullable: true),
                     PasswordHash = table.Column<string>(nullable: true),
                     PhoneNumber = table.Column<string>(nullable: true),
                     PhoneNumberConfirmed = table.Column<bool>(nullable: false),
                     SecurityStamp = table.Column<string>(nullable: true),
+                    Status = table.Column<char>(nullable: false),
                     TwoFactorEnabled = table.Column<bool>(nullable: false),
                     UserName = table.Column<string>(maxLength: 256, nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_AspNetUsers", x => x.Id);
+                    table.PrimaryKey("PK_UserProfile", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -147,11 +153,11 @@ namespace SM.Data.Migrations
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     DistrictCode = table.Column<string>(maxLength: 30, nullable: false),
                     Active = table.Column<bool>(nullable: false),
-                    CreateDate = table.Column<string>(nullable: true),
-                    DistrictName = table.Column<string>(nullable: true),
-                    ProvinceCode = table.Column<string>(nullable: false),
-                    UpdateByCode = table.Column<string>(nullable: true),
-                    UpdateDate = table.Column<string>(nullable: true)
+                    CreateDate = table.Column<DateTime>(nullable: false),
+                    DistrictName = table.Column<string>(maxLength: 250, nullable: true),
+                    ProvinceCode = table.Column<string>(maxLength: 30, nullable: false),
+                    UpdateByCode = table.Column<string>(maxLength: 50, nullable: true),
+                    UpdateDate = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -182,11 +188,11 @@ namespace SM.Data.Migrations
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     ProvinceCode = table.Column<string>(maxLength: 30, nullable: false),
                     Active = table.Column<bool>(nullable: false),
-                    CreateDate = table.Column<string>(nullable: true),
-                    ProvinceName = table.Column<string>(nullable: true),
-                    RegionCode = table.Column<string>(nullable: false),
-                    UpdateByCode = table.Column<string>(nullable: true),
-                    UpdateDate = table.Column<string>(nullable: true)
+                    CreateDate = table.Column<DateTime>(nullable: false),
+                    ProvinceName = table.Column<string>(maxLength: 250, nullable: true),
+                    RegionCode = table.Column<string>(maxLength: 30, nullable: false),
+                    UpdateByCode = table.Column<string>(maxLength: 50, nullable: true),
+                    UpdateDate = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -201,11 +207,11 @@ namespace SM.Data.Migrations
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     RegionCode = table.Column<string>(maxLength: 30, nullable: false),
                     Active = table.Column<bool>(nullable: false),
-                    CountryCode = table.Column<string>(nullable: false),
-                    CreateDate = table.Column<string>(nullable: true),
-                    RegionName = table.Column<string>(nullable: true),
-                    UpdateByCode = table.Column<string>(nullable: true),
-                    UpdateDate = table.Column<string>(nullable: true)
+                    CountryCode = table.Column<string>(maxLength: 30, nullable: false),
+                    CreateDate = table.Column<DateTime>(nullable: false),
+                    RegionName = table.Column<string>(maxLength: 250, nullable: true),
+                    UpdateByCode = table.Column<string>(maxLength: 50, nullable: true),
+                    UpdateDate = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -220,9 +226,9 @@ namespace SM.Data.Migrations
                     RouteCode = table.Column<string>(nullable: false),
                     CustomerCode = table.Column<string>(maxLength: 50, nullable: false),
                     LocationCode = table.Column<string>(maxLength: 50, nullable: false),
-                    BranchCode = table.Column<string>(nullable: true),
+                    BranchCode = table.Column<string>(maxLength: 50, nullable: true),
                     CustomerName = table.Column<string>(nullable: true),
-                    DistributorCode = table.Column<string>(nullable: true),
+                    DistributorCode = table.Column<string>(maxLength: 50, nullable: true),
                     EffectiveDate = table.Column<DateTime>(nullable: false),
                     EndDate = table.Column<DateTime>(nullable: true),
                     Friday = table.Column<bool>(nullable: false),
@@ -241,7 +247,7 @@ namespace SM.Data.Migrations
                     VisitOrderThu = table.Column<int>(nullable: true),
                     VisitOrderTue = table.Column<int>(nullable: true),
                     VisitOrderWed = table.Column<int>(nullable: true),
-                    WarehouseCode = table.Column<string>(nullable: true),
+                    WarehouseCode = table.Column<string>(maxLength: 50, nullable: true),
                     Wednesday = table.Column<bool>(nullable: false),
                     Week1 = table.Column<bool>(nullable: false),
                     Week2 = table.Column<bool>(nullable: false),
@@ -259,7 +265,7 @@ namespace SM.Data.Migrations
                 columns: table => new
                 {
                     Code = table.Column<string>(maxLength: 50, nullable: false),
-                    BinCode = table.Column<string>(nullable: true),
+                    BinCode = table.Column<string>(maxLength: 50, nullable: true),
                     ChannelCode = table.Column<string>(maxLength: 30, nullable: false),
                     CheckIn = table.Column<string>(nullable: true),
                     CreateByCode = table.Column<string>(nullable: true),
@@ -273,12 +279,12 @@ namespace SM.Data.Migrations
                     IsRouteUnderDT = table.Column<bool>(nullable: false),
                     IsSundayRoute = table.Column<bool>(nullable: false),
                     IsVanSales = table.Column<bool>(nullable: false),
-                    ManageBy = table.Column<string>(nullable: true),
+                    ManageBy = table.Column<string>(maxLength: 50, nullable: true),
                     Name = table.Column<string>(nullable: true),
-                    OutRoute = table.Column<string>(nullable: true),
+                    OutRoute = table.Column<string>(maxLength: 50, nullable: true),
                     Principle = table.Column<string>(nullable: true),
                     SalesCatCode = table.Column<string>(nullable: true),
-                    SalesMan = table.Column<string>(nullable: true),
+                    SalesMan = table.Column<string>(maxLength: 50, nullable: true),
                     SalesTerritoryCode = table.Column<string>(maxLength: 30, nullable: false),
                     SalesValueCode = table.Column<string>(maxLength: 30, nullable: false),
                     SellingProvinceCode = table.Column<string>(maxLength: 30, nullable: false),
@@ -324,10 +330,10 @@ namespace SM.Data.Migrations
                     SalesTerritoryCode = table.Column<string>(maxLength: 30, nullable: false),
                     EffectiveDate = table.Column<DateTime>(nullable: false),
                     EndDate = table.Column<DateTime>(nullable: true),
-                    GeoCode = table.Column<string>(nullable: true),
-                    GeoName = table.Column<string>(nullable: true),
+                    GeoCode = table.Column<string>(maxLength: 50, nullable: true),
+                    GeoName = table.Column<string>(maxLength: 50, nullable: true),
                     GeoType = table.Column<char>(nullable: false),
-                    SalesValueCode = table.Column<string>(nullable: true)
+                    SalesValueCode = table.Column<string>(maxLength: 50, nullable: true)
                 },
                 constraints: table =>
                 {
@@ -346,7 +352,7 @@ namespace SM.Data.Migrations
                     CreateByCode = table.Column<string>(nullable: true),
                     CreateDate = table.Column<DateTime>(nullable: false),
                     Name = table.Column<string>(nullable: true),
-                    SalesValueCode = table.Column<string>(nullable: true),
+                    SalesValueCode = table.Column<string>(maxLength: 50, nullable: true),
                     Status = table.Column<char>(nullable: false),
                     UpdateByCode = table.Column<string>(nullable: true),
                     UpdateDate = table.Column<DateTime>(nullable: false)
@@ -363,14 +369,14 @@ namespace SM.Data.Migrations
                 {
                     Code = table.Column<string>(maxLength: 30, nullable: false),
                     Active = table.Column<bool>(nullable: false),
-                    ChannelCode = table.Column<string>(nullable: false),
-                    ChannelName = table.Column<string>(nullable: true),
-                    CountryCode = table.Column<string>(nullable: true),
-                    CountryName = table.Column<string>(nullable: true),
+                    ChannelCode = table.Column<string>(maxLength: 30, nullable: false),
+                    ChannelName = table.Column<string>(maxLength: 250, nullable: true),
+                    CountryCode = table.Column<string>(maxLength: 30, nullable: true),
+                    CountryName = table.Column<string>(maxLength: 250, nullable: true),
                     CreateDate = table.Column<DateTime>(nullable: false),
                     EffectiveDate = table.Column<DateTime>(nullable: false),
                     EndDate = table.Column<DateTime>(nullable: true),
-                    Name = table.Column<string>(nullable: false),
+                    Name = table.Column<string>(maxLength: 250, nullable: false),
                     Status = table.Column<char>(nullable: false),
                     UpdateDate = table.Column<DateTime>(nullable: false)
                 },
@@ -384,14 +390,14 @@ namespace SM.Data.Migrations
                 columns: table => new
                 {
                     Code = table.Column<string>(maxLength: 30, nullable: false),
-                    TerrStructCode = table.Column<string>(nullable: false),
+                    TerrStructCode = table.Column<string>(maxLength: 30, nullable: false),
                     Active = table.Column<bool>(nullable: false),
                     LastLevel = table.Column<bool>(nullable: false),
                     Level = table.Column<int>(nullable: false),
                     Name = table.Column<string>(nullable: true),
-                    ParentCode = table.Column<string>(nullable: true),
+                    ParentCode = table.Column<string>(maxLength: 30, nullable: true),
                     Status = table.Column<char>(nullable: false),
-                    TerrStructName = table.Column<string>(nullable: true)
+                    TerrStructName = table.Column<string>(maxLength: 250, nullable: true)
                 },
                 constraints: table =>
                 {
@@ -403,14 +409,14 @@ namespace SM.Data.Migrations
                 columns: table => new
                 {
                     Code = table.Column<string>(maxLength: 30, nullable: false),
-                    TerrCode = table.Column<string>(nullable: false),
+                    TerrCode = table.Column<string>(maxLength: 30, nullable: false),
                     Active = table.Column<bool>(nullable: false),
                     LastLevel = table.Column<bool>(nullable: false),
                     Level = table.Column<int>(nullable: false),
                     Name = table.Column<string>(nullable: true),
-                    ParentCode = table.Column<string>(nullable: true),
+                    ParentCode = table.Column<string>(maxLength: 30, nullable: true),
                     Status = table.Column<char>(nullable: false),
-                    TerrName = table.Column<string>(nullable: true)
+                    TerrName = table.Column<string>(maxLength: 250, nullable: true)
                 },
                 constraints: table =>
                 {
@@ -425,11 +431,11 @@ namespace SM.Data.Migrations
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     WardCode = table.Column<string>(maxLength: 30, nullable: false),
                     Active = table.Column<bool>(nullable: false),
-                    CreateDate = table.Column<string>(nullable: true),
-                    DistrictCode = table.Column<string>(nullable: false),
-                    UpdateByCode = table.Column<string>(nullable: true),
-                    UpdateDate = table.Column<string>(nullable: true),
-                    WardName = table.Column<string>(nullable: true)
+                    CreateDate = table.Column<DateTime>(nullable: false),
+                    DistrictCode = table.Column<string>(maxLength: 30, nullable: false),
+                    UpdateByCode = table.Column<string>(maxLength: 50, nullable: true),
+                    UpdateDate = table.Column<DateTime>(nullable: false),
+                    WardName = table.Column<string>(maxLength: 250, nullable: true)
                 },
                 constraints: table =>
                 {
@@ -450,9 +456,9 @@ namespace SM.Data.Migrations
                 {
                     table.PrimaryKey("PK_AspNetRoleClaims", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_AspNetRoleClaims_AspNetRoles_RoleId",
+                        name: "FK_AspNetRoleClaims_Role_RoleId",
                         column: x => x.RoleId,
-                        principalTable: "AspNetRoles",
+                        principalTable: "Role",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -471,9 +477,9 @@ namespace SM.Data.Migrations
                 {
                     table.PrimaryKey("PK_AspNetUserClaims", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_AspNetUserClaims_AspNetUsers_UserId",
+                        name: "FK_AspNetUserClaims_UserProfile_UserId",
                         column: x => x.UserId,
-                        principalTable: "AspNetUsers",
+                        principalTable: "UserProfile",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -491,9 +497,9 @@ namespace SM.Data.Migrations
                 {
                     table.PrimaryKey("PK_AspNetUserLogins", x => new { x.LoginProvider, x.ProviderKey });
                     table.ForeignKey(
-                        name: "FK_AspNetUserLogins_AspNetUsers_UserId",
+                        name: "FK_AspNetUserLogins_UserProfile_UserId",
                         column: x => x.UserId,
-                        principalTable: "AspNetUsers",
+                        principalTable: "UserProfile",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -509,22 +515,22 @@ namespace SM.Data.Migrations
                 {
                     table.PrimaryKey("PK_AspNetUserRoles", x => new { x.UserId, x.RoleId });
                     table.ForeignKey(
-                        name: "FK_AspNetUserRoles_AspNetRoles_RoleId",
+                        name: "FK_AspNetUserRoles_Role_RoleId",
                         column: x => x.RoleId,
-                        principalTable: "AspNetRoles",
+                        principalTable: "Role",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_AspNetUserRoles_AspNetUsers_UserId",
+                        name: "FK_AspNetUserRoles_UserProfile_UserId",
                         column: x => x.UserId,
-                        principalTable: "AspNetUsers",
+                        principalTable: "UserProfile",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
                 name: "RoleNameIndex",
-                table: "AspNetRoles",
+                table: "Role",
                 column: "NormalizedName",
                 unique: true);
 
@@ -550,12 +556,12 @@ namespace SM.Data.Migrations
 
             migrationBuilder.CreateIndex(
                 name: "EmailIndex",
-                table: "AspNetUsers",
+                table: "UserProfile",
                 column: "NormalizedEmail");
 
             migrationBuilder.CreateIndex(
                 name: "UserNameIndex",
-                table: "AspNetUsers",
+                table: "UserProfile",
                 column: "NormalizedUserName",
                 unique: true);
         }
@@ -623,10 +629,10 @@ namespace SM.Data.Migrations
                 name: "dbo.Wards");
 
             migrationBuilder.DropTable(
-                name: "AspNetRoles");
+                name: "Role");
 
             migrationBuilder.DropTable(
-                name: "AspNetUsers");
+                name: "UserProfile");
         }
     }
 }

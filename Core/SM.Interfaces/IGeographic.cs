@@ -14,6 +14,7 @@ namespace SM.Interfaces
         ResultMessage Update(Region region);
         ResultMessage Delete(string regionCode);
         Region Get(string regionCode);
+        IList<Region> GetAll();
         IList<Region> Gets(int currentPageNumber, int pageSize, string sortExpression, string sortDirection, out int totalRows);
     }
 
@@ -25,7 +26,8 @@ namespace SM.Interfaces
         ResultMessage Create(Province province);
         ResultMessage Update(Province province);
         ResultMessage Delete(string provinceCode);
-        Region Get(string provinceCode);
-        IList<Region> Gets(int currentPageNumber, int pageSize, string sortExpression, string sortDirection, out int totalRows);
+        Province Get(string provinceCode);
+        IList<Province> GetAll();
+        IList<Province> Gets(int currentPageNumber, int pageSize, string sortExpression, string sortDirection, out int totalRows);
     }
 }

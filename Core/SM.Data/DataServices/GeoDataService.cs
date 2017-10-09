@@ -113,6 +113,16 @@ namespace SM.Data.DataServices
         }
 
         /// <summary>
+        /// Get All Region
+        /// </summary>
+        /// <returns></returns>
+        public IList<Region> GetAll()
+        {
+            IList<Region> regions = dbConnection.Regions.ToList();
+            return regions;
+        }
+
+        /// <summary>
         /// Get Region
         /// </summary>
         /// <param name="currentPageNumber"></param>
@@ -233,10 +243,20 @@ namespace SM.Data.DataServices
         /// </summary>
         /// <param name="regionCode"></param>
         /// <returns></returns>
-        public Region Get(string regionCode)
+        public Province Get(string provinceCode)
         {
-            Region region = dbConnection.Regions.Where(x => x.RegionCode == regionCode).FirstOrDefault();
-            return region;
+            Province province = dbConnection.Provinces.Where(x => x.ProvinceCode == provinceCode).FirstOrDefault();
+            return province;
+        }
+
+        /// <summary>
+        /// Get All Province
+        /// </summary>
+        /// <returns></returns>
+        public IList<Province> GetAll()
+        {
+            IList<Province> products = dbConnection.Provinces.ToList();
+            return products;
         }
 
         /// <summary>
@@ -248,7 +268,7 @@ namespace SM.Data.DataServices
         /// <param name="sortDirection"></param>
         /// <param name="totalRows"></param>
         /// <returns></returns>
-        public IList<Region> Gets(int currentPageNumber, int pageSize, string sortExpression, string sortDirection, out int totalRows)
+        public IList<Province> Gets(int currentPageNumber, int pageSize, string sortExpression, string sortDirection, out int totalRows)
         {
             totalRows = 0;
 
@@ -256,9 +276,9 @@ namespace SM.Data.DataServices
 
             totalRows = dbConnection.Products.Count();
 
-            List<Region> regions = dbConnection.Regions.OrderBy(sortExpression).Skip((currentPageNumber - 1) * pageSize).Take(pageSize).ToList();
+            List<Province> provinces = dbConnection.Provinces.OrderBy(sortExpression).Skip((currentPageNumber - 1) * pageSize).Take(pageSize).ToList();
 
-            return regions;
+            return provinces;
 
         }
     }

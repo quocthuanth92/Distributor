@@ -35,17 +35,6 @@ namespace SM.Data
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Product> Products { get; set; }
 
-
-        public SalesManagementDatabase(DbContextOptions<SalesManagementDatabase> options)
-            : base(options)
-        {
-        }
-
-        public SalesManagementDatabase()
-        {
-            //ATT: I also don't understand why ef requires the parameterless constructor
-        }
-
         /// <summary>
         /// Model Creation
         /// </summary>
@@ -91,6 +80,16 @@ namespace SM.Data
             modelBuilder.Entity<CustomerManagement>().ToTable("dbo.CustomerManagements");
             modelBuilder.Entity<Customer>().ToTable("dbo.Customers");
             modelBuilder.Entity<Product>().ToTable("dbo.Products");
+        }
+
+        public SalesManagementDatabase(DbContextOptions<SalesManagementDatabase> options)
+            : base(options)
+        {
+        }
+
+        public SalesManagementDatabase()
+        {
+            //ATT: I also don't understand why ef requires the parameterless constructor
         }
     }
 }

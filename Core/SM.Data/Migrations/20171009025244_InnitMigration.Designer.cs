@@ -8,8 +8,8 @@ using SM.Data;
 namespace SM.Data.Migrations
 {
     [DbContext(typeof(SalesManagementDatabase))]
-    [Migration("20170914081155_InitialMigration")]
-    partial class InitialMigration
+    [Migration("20171009025244_InnitMigration")]
+    partial class InnitMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -37,7 +37,7 @@ namespace SM.Data.Migrations
                         .IsUnique()
                         .HasName("RoleNameIndex");
 
-                    b.ToTable("AspNetRoles");
+                    b.ToTable("Role");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityRoleClaim<string>", b =>
@@ -131,6 +131,10 @@ namespace SM.Data.Migrations
 
                     b.Property<int>("AccessFailedCount");
 
+                    b.Property<bool>("Active");
+
+                    b.Property<string>("Address");
+
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken();
 
@@ -139,9 +143,15 @@ namespace SM.Data.Migrations
 
                     b.Property<bool>("EmailConfirmed");
 
+                    b.Property<string>("FirstName");
+
+                    b.Property<string>("LastName");
+
                     b.Property<bool>("LockoutEnabled");
 
                     b.Property<DateTimeOffset?>("LockoutEnd");
+
+                    b.Property<string>("MiddleName");
 
                     b.Property<string>("NormalizedEmail")
                         .HasMaxLength(256);
@@ -157,6 +167,8 @@ namespace SM.Data.Migrations
 
                     b.Property<string>("SecurityStamp");
 
+                    b.Property<char>("Status");
+
                     b.Property<bool>("TwoFactorEnabled");
 
                     b.Property<string>("UserName")
@@ -171,7 +183,7 @@ namespace SM.Data.Migrations
                         .IsUnique()
                         .HasName("UserNameIndex");
 
-                    b.ToTable("AspNetUsers");
+                    b.ToTable("UserProfile");
                 });
 
             modelBuilder.Entity("SM.Entities.Customer", b =>
@@ -336,16 +348,19 @@ namespace SM.Data.Migrations
 
                     b.Property<bool>("Active");
 
-                    b.Property<string>("CreateDate");
+                    b.Property<DateTime>("CreateDate");
 
-                    b.Property<string>("DistrictName");
+                    b.Property<string>("DistrictName")
+                        .HasMaxLength(250);
 
                     b.Property<string>("ProvinceCode")
-                        .IsRequired();
+                        .IsRequired()
+                        .HasMaxLength(30);
 
-                    b.Property<string>("UpdateByCode");
+                    b.Property<string>("UpdateByCode")
+                        .HasMaxLength(50);
 
-                    b.Property<string>("UpdateDate");
+                    b.Property<DateTime>("UpdateDate");
 
                     b.HasKey("Id", "DistrictCode");
 
@@ -380,16 +395,19 @@ namespace SM.Data.Migrations
 
                     b.Property<bool>("Active");
 
-                    b.Property<string>("CreateDate");
+                    b.Property<DateTime>("CreateDate");
 
-                    b.Property<string>("ProvinceName");
+                    b.Property<string>("ProvinceName")
+                        .HasMaxLength(250);
 
                     b.Property<string>("RegionCode")
-                        .IsRequired();
+                        .IsRequired()
+                        .HasMaxLength(30);
 
-                    b.Property<string>("UpdateByCode");
+                    b.Property<string>("UpdateByCode")
+                        .HasMaxLength(50);
 
-                    b.Property<string>("UpdateDate");
+                    b.Property<DateTime>("UpdateDate");
 
                     b.HasKey("Id", "ProvinceCode");
 
@@ -407,15 +425,18 @@ namespace SM.Data.Migrations
                     b.Property<bool>("Active");
 
                     b.Property<string>("CountryCode")
-                        .IsRequired();
+                        .IsRequired()
+                        .HasMaxLength(30);
 
-                    b.Property<string>("CreateDate");
+                    b.Property<DateTime>("CreateDate");
 
-                    b.Property<string>("RegionName");
+                    b.Property<string>("RegionName")
+                        .HasMaxLength(250);
 
-                    b.Property<string>("UpdateByCode");
+                    b.Property<string>("UpdateByCode")
+                        .HasMaxLength(50);
 
-                    b.Property<string>("UpdateDate");
+                    b.Property<DateTime>("UpdateDate");
 
                     b.HasKey("Id", "RegionCode");
 
@@ -434,11 +455,13 @@ namespace SM.Data.Migrations
                     b.Property<string>("LocationCode")
                         .HasMaxLength(50);
 
-                    b.Property<string>("BranchCode");
+                    b.Property<string>("BranchCode")
+                        .HasMaxLength(50);
 
                     b.Property<string>("CustomerName");
 
-                    b.Property<string>("DistributorCode");
+                    b.Property<string>("DistributorCode")
+                        .HasMaxLength(50);
 
                     b.Property<DateTime>("EffectiveDate");
 
@@ -476,7 +499,8 @@ namespace SM.Data.Migrations
 
                     b.Property<int?>("VisitOrderWed");
 
-                    b.Property<string>("WarehouseCode");
+                    b.Property<string>("WarehouseCode")
+                        .HasMaxLength(50);
 
                     b.Property<bool>("Wednesday");
 
@@ -501,7 +525,8 @@ namespace SM.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasMaxLength(50);
 
-                    b.Property<string>("BinCode");
+                    b.Property<string>("BinCode")
+                        .HasMaxLength(50);
 
                     b.Property<string>("ChannelCode")
                         .IsRequired()
@@ -531,17 +556,20 @@ namespace SM.Data.Migrations
 
                     b.Property<bool>("IsVanSales");
 
-                    b.Property<string>("ManageBy");
+                    b.Property<string>("ManageBy")
+                        .HasMaxLength(50);
 
                     b.Property<string>("Name");
 
-                    b.Property<string>("OutRoute");
+                    b.Property<string>("OutRoute")
+                        .HasMaxLength(50);
 
                     b.Property<string>("Principle");
 
                     b.Property<string>("SalesCatCode");
 
-                    b.Property<string>("SalesMan");
+                    b.Property<string>("SalesMan")
+                        .HasMaxLength(50);
 
                     b.Property<string>("SalesTerritoryCode")
                         .IsRequired()
@@ -614,13 +642,16 @@ namespace SM.Data.Migrations
 
                     b.Property<DateTime?>("EndDate");
 
-                    b.Property<string>("GeoCode");
+                    b.Property<string>("GeoCode")
+                        .HasMaxLength(50);
 
-                    b.Property<string>("GeoName");
+                    b.Property<string>("GeoName")
+                        .HasMaxLength(50);
 
                     b.Property<char>("GeoType");
 
-                    b.Property<string>("SalesValueCode");
+                    b.Property<string>("SalesValueCode")
+                        .HasMaxLength(50);
 
                     b.HasKey("Code", "SalesTerritoryCode");
 
@@ -647,7 +678,8 @@ namespace SM.Data.Migrations
 
                     b.Property<string>("Name");
 
-                    b.Property<string>("SalesValueCode");
+                    b.Property<string>("SalesValueCode")
+                        .HasMaxLength(50);
 
                     b.Property<char>("Status");
 
@@ -671,13 +703,17 @@ namespace SM.Data.Migrations
                     b.Property<bool>("Active");
 
                     b.Property<string>("ChannelCode")
-                        .IsRequired();
+                        .IsRequired()
+                        .HasMaxLength(30);
 
-                    b.Property<string>("ChannelName");
+                    b.Property<string>("ChannelName")
+                        .HasMaxLength(250);
 
-                    b.Property<string>("CountryCode");
+                    b.Property<string>("CountryCode")
+                        .HasMaxLength(30);
 
-                    b.Property<string>("CountryName");
+                    b.Property<string>("CountryName")
+                        .HasMaxLength(250);
 
                     b.Property<DateTime>("CreateDate");
 
@@ -686,7 +722,8 @@ namespace SM.Data.Migrations
                     b.Property<DateTime?>("EndDate");
 
                     b.Property<string>("Name")
-                        .IsRequired();
+                        .IsRequired()
+                        .HasMaxLength(250);
 
                     b.Property<char>("Status");
 
@@ -702,7 +739,8 @@ namespace SM.Data.Migrations
                     b.Property<string>("Code")
                         .HasMaxLength(30);
 
-                    b.Property<string>("TerrStructCode");
+                    b.Property<string>("TerrStructCode")
+                        .HasMaxLength(30);
 
                     b.Property<bool>("Active");
 
@@ -712,11 +750,13 @@ namespace SM.Data.Migrations
 
                     b.Property<string>("Name");
 
-                    b.Property<string>("ParentCode");
+                    b.Property<string>("ParentCode")
+                        .HasMaxLength(30);
 
                     b.Property<char>("Status");
 
-                    b.Property<string>("TerrStructName");
+                    b.Property<string>("TerrStructName")
+                        .HasMaxLength(250);
 
                     b.HasKey("Code", "TerrStructCode");
 
@@ -728,7 +768,8 @@ namespace SM.Data.Migrations
                     b.Property<string>("Code")
                         .HasMaxLength(30);
 
-                    b.Property<string>("TerrCode");
+                    b.Property<string>("TerrCode")
+                        .HasMaxLength(30);
 
                     b.Property<bool>("Active");
 
@@ -738,11 +779,13 @@ namespace SM.Data.Migrations
 
                     b.Property<string>("Name");
 
-                    b.Property<string>("ParentCode");
+                    b.Property<string>("ParentCode")
+                        .HasMaxLength(30);
 
                     b.Property<char>("Status");
 
-                    b.Property<string>("TerrName");
+                    b.Property<string>("TerrName")
+                        .HasMaxLength(250);
 
                     b.HasKey("Code", "TerrCode");
 
@@ -759,16 +802,19 @@ namespace SM.Data.Migrations
 
                     b.Property<bool>("Active");
 
-                    b.Property<string>("CreateDate");
+                    b.Property<DateTime>("CreateDate");
 
                     b.Property<string>("DistrictCode")
-                        .IsRequired();
+                        .IsRequired()
+                        .HasMaxLength(30);
 
-                    b.Property<string>("UpdateByCode");
+                    b.Property<string>("UpdateByCode")
+                        .HasMaxLength(50);
 
-                    b.Property<string>("UpdateDate");
+                    b.Property<DateTime>("UpdateDate");
 
-                    b.Property<string>("WardName");
+                    b.Property<string>("WardName")
+                        .HasMaxLength(250);
 
                     b.HasKey("Id", "WardCode");
 

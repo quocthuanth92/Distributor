@@ -1,33 +1,50 @@
 ----------
-04/10/2017 5:16:39 CH
-Source:	SM.Data
-Type:	NullReferenceException
-Message:	Object reference not set to an instance of an object.
-Stack:	   at SM.Data.DataServices.ProvinceDataService.Create(Province province) in D:\Data\2.SalesManageProject\Core\SM.Data\DataServices\GeoDataService.cs:line 167
-   at SalesManagement.Controllers.GeographicController.Import(ImportExportMV importMV) in D:\Data\2.SalesManageProject\Core\SalesManagement\Controllers\GeographicController.cs:line 152
-----------
-04/10/2017 5:16:39 CH
+09/10/2017 2:14:46 CH
 Message:	sdsdsdsd
 ----------
-04/10/2017 5:18:07 CH
-Source:	SM.Data
-Type:	NullReferenceException
-Message:	Object reference not set to an instance of an object.
-Stack:	   at SM.Data.DataServices.ProvinceDataService.Create(Province province) in D:\Data\2.SalesManageProject\Core\SM.Data\DataServices\GeoDataService.cs:line 167
+09/10/2017 2:15:24 CH
+Source:	Microsoft.EntityFrameworkCore
+Type:	InvalidOperationException
+Message:	No database provider has been configured for this DbContext. A provider can be configured by overriding the DbContext.OnConfiguring method or by using AddDbContext on the application service provider. If AddDbContext is used, then also ensure that your DbContext type accepts a DbContextOptions<TContext> object in its constructor and passes it to the base constructor for DbContext.
+Stack:	   at Microsoft.EntityFrameworkCore.Internal.DatabaseProviderSelector.SelectServices()
+   at Microsoft.EntityFrameworkCore.Internal.LazyRef`1.get_Value()
+   at Microsoft.EntityFrameworkCore.Infrastructure.EntityFrameworkServiceCollectionExtensions.<>c.<AddEntityFramework>b__0_13(IServiceProvider p)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScoped(ScopedCallSite scopedCallSite, ServiceProvider provider)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.<>c__DisplayClass16_0.<RealizeService>b__0(ServiceProvider provider)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetService[T](IServiceProvider provider)
+   at Microsoft.EntityFrameworkCore.Infrastructure.AccessorExtensions.GetService[TService](IInfrastructure`1 accessor)
+   at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.get_DatabaseCreator()
+   at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.EnsureCreated()
+   at SM.Data.SalesManagementDatabase..ctor() in D:\Data\2.SalesManageProject\Core\SM.Data\SalesManagementDatabase.cs:line 92
+   at SM.Data.EntityFrameworkService.CreateSession() in D:\Data\2.SalesManageProject\Core\SM.Data\EntityFrameworkService.cs:line 48
    at SalesManagement.Controllers.GeographicController.Import(ImportExportMV importMV) in D:\Data\2.SalesManageProject\Core\SalesManagement\Controllers\GeographicController.cs:line 152
 ----------
-04/10/2017 5:18:07 CH
+09/10/2017 2:15:24 CH
 Message:	sdsdsdsd
 ----------
-04/10/2017 5:21:34 CH
+09/10/2017 2:16:03 CH
 Message:	sdsdsdsd
 ----------
-04/10/2017 5:22:43 CH
-Source:	SM.Data
-Type:	NullReferenceException
-Message:	Object reference not set to an instance of an object.
-Stack:	   at SM.Data.DataServices.ProvinceDataService.Create(Province province) in D:\Data\2.SalesManageProject\Core\SM.Data\DataServices\GeoDataService.cs:line 167
-   at SalesManagement.Controllers.GeographicController.Import(ImportExportMV importMV) in D:\Data\2.SalesManageProject\Core\SalesManagement\Controllers\GeographicController.cs:line 152
+09/10/2017 2:18:50 CH
+Source:	Microsoft.EntityFrameworkCore
+Type:	InvalidOperationException
+Message:	No database provider has been configured for this DbContext. A provider can be configured by overriding the DbContext.OnConfiguring method or by using AddDbContext on the application service provider. If AddDbContext is used, then also ensure that your DbContext type accepts a DbContextOptions<TContext> object in its constructor and passes it to the base constructor for DbContext.
+Stack:	   at Microsoft.EntityFrameworkCore.Internal.DatabaseProviderSelector.SelectServices()
+   at Microsoft.EntityFrameworkCore.Internal.LazyRef`1.get_Value()
+   at Microsoft.EntityFrameworkCore.Infrastructure.EntityFrameworkServiceCollectionExtensions.<>c.<AddEntityFramework>b__0_12(IServiceProvider p)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScoped(ScopedCallSite scopedCallSite, ServiceProvider provider)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, ServiceProvider provider)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScoped(ScopedCallSite scopedCallSite, ServiceProvider provider)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, ServiceProvider provider)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScoped(ScopedCallSite scopedCallSite, ServiceProvider provider)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.<>c__DisplayClass16_0.<RealizeService>b__0(ServiceProvider provider)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.EntityFrameworkCore.DbContext.get_StateManager()
+   at Microsoft.EntityFrameworkCore.DbContext.EntryWithoutDetectChanges[TEntity](TEntity entity)
+   at Microsoft.EntityFrameworkCore.DbContext.SetEntityState[TEntity](TEntity entity, EntityState entityState)
+   at SM.Data.DataServices.ProvinceDataService.Create(Province province) in D:\Data\2.SalesManageProject\Core\SM.Data\DataServices\GeoDataService.cs:line 167
+   at SalesManagement.Controllers.GeographicController.Import(ImportExportMV importMV) in D:\Data\2.SalesManageProject\Core\SalesManagement\Controllers\GeographicController.cs:line 155
 ----------
-04/10/2017 5:22:43 CH
+09/10/2017 2:18:50 CH
 Message:	sdsdsdsd

@@ -27,7 +27,7 @@ namespace SM.Data
         /// Commit Transaction
         /// </summary>
         /// <param name="closeSession"></param>
-        public void CommitTransaction(Boolean closeSession = true)
+        public void CommitTransaction(Boolean closeSession)
         {
             dbConnection.SaveChanges();
         }
