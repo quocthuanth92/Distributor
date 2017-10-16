@@ -71,7 +71,11 @@ namespace SalesManagement
             // Add application services.
             services.AddTransient<IEmailSender, AuthMessageSender>();
             services.AddTransient<ISmsSender, AuthMessageSender>();
+            //services.AddTransient<IDataRepository, EntityFrameworkService>();
+            //services.AddTransient<IDisposable, EntityFrameworkService>();
+            //services.AddTransient<EntityFrameworkService, ProvinceDataService>();
             services.AddTransient<IProvinceDataService, ProvinceDataService>();
+            services.AddTransient<IProductDataService, ProductDataService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

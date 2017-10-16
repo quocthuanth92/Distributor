@@ -141,4 +141,7 @@
   <data name="Submit" xml:space="preserve">
     <value>Tìm kiếm</value>
   </data>
+  <data name="TitleProvince" xml:space="preserve">
+    <value>Quản Lý Tỉnh Thành</value>
+  </data>
 </root>

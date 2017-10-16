@@ -80,6 +80,15 @@ namespace SM.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Change.
+        /// </summary>
+        public static string Change {
+            get {
+                return ResourceManager.GetString("Change", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to This is a demo page.
         /// </summary>
         public static string DisplayString {
@@ -107,6 +116,42 @@ namespace SM.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Tạo mới và Cập nhật nếu tồn tại.
+        /// </summary>
+        public static string Import_AddUpdate {
+            get {
+                return ResourceManager.GetString("Import_AddUpdate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Chỉ tạo mới.
+        /// </summary>
+        public static string Import_OnlyAdd {
+            get {
+                return ResourceManager.GetString("Import_OnlyAdd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Xóa nếu tồn tại.
+        /// </summary>
+        public static string Import_OnlyInactive {
+            get {
+                return ResourceManager.GetString("Import_OnlyInactive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Chỉ cập nhật nếu tồn tại.
+        /// </summary>
+        public static string Import_OnlyUpdate {
+            get {
+                return ResourceManager.GetString("Import_OnlyUpdate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Name.
         /// </summary>
         public static string Name {
@@ -125,6 +170,24 @@ namespace SM.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Xóa.
+        /// </summary>
+        public static string Remove {
+            get {
+                return ResourceManager.GetString("Remove", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SelectFile.
+        /// </summary>
+        public static string SelectFile {
+            get {
+                return ResourceManager.GetString("SelectFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Sample Application.
         /// </summary>
         public static string SiteHeader {
@@ -139,6 +202,33 @@ namespace SM.Resources {
         public static string Submit {
             get {
                 return ResourceManager.GetString("Submit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Quản Lý Tỉnh Thành.
+        /// </summary>
+        public static string TitleProvince {
+            get {
+                return ResourceManager.GetString("TitleProvince", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Form upload.
+        /// </summary>
+        public static string TitleUpload {
+            get {
+                return ResourceManager.GetString("TitleUpload", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Upload.
+        /// </summary>
+        public static string Upload {
+            get {
+                return ResourceManager.GetString("Upload", resourceCulture);
             }
         }
     }

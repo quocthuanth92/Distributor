@@ -9,11 +9,15 @@ using Microsoft.EntityFrameworkCore;
 namespace SM.Data
 {
    
-
     public class EntityFrameworkService : IDataRepository, IDisposable
     {
 
         SalesManagementDatabase _connection;
+
+        public EntityFrameworkService()
+        {
+            _connection = new SalesManagementDatabase();
+        }
 
         /// <summary>
         /// Database Context

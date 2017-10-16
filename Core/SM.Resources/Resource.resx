@@ -123,6 +123,9 @@
   <data name="AgeRequiredError" xml:space="preserve">
     <value>Age is Required</value>
   </data>
+  <data name="Change" xml:space="preserve">
+    <value>Change</value>
+  </data>
   <data name="DisplayString" xml:space="preserve">
     <value>This is a demo page</value>
   </data>
@@ -132,16 +135,43 @@
   <data name="FromUpload" xml:space="preserve">
     <value>Upload File</value>
   </data>
+  <data name="Import_AddUpdate" xml:space="preserve">
+    <value>Tạo mới và Cập nhật nếu tồn tại</value>
+  </data>
+  <data name="Import_OnlyAdd" xml:space="preserve">
+    <value>Chỉ tạo mới</value>
+  </data>
+  <data name="Import_OnlyInactive" xml:space="preserve">
+    <value>Xóa nếu tồn tại</value>
+  </data>
+  <data name="Import_OnlyUpdate" xml:space="preserve">
+    <value>Chỉ cập nhật nếu tồn tại</value>
+  </data>
   <data name="Name" xml:space="preserve">
     <value>Name</value>
   </data>
   <data name="NameRequiredError" xml:space="preserve">
     <value>Name is Required</value>
   </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Xóa</value>
+  </data>
+  <data name="SelectFile" xml:space="preserve">
+    <value>SelectFile</value>
+  </data>
   <data name="SiteHeader" xml:space="preserve">
     <value>Sample Application</value>
   </data>
   <data name="Submit" xml:space="preserve">
     <value>Submit</value>
+  </data>
+  <data name="TitleProvince" xml:space="preserve">
+    <value>Quản Lý Tỉnh Thành</value>
+  </data>
+  <data name="TitleUpload" xml:space="preserve">
+    <value>Form upload</value>
+  </data>
+  <data name="Upload" xml:space="preserve">
+    <value>Upload</value>
   </data>
 </root>

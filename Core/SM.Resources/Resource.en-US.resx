@@ -138,4 +138,7 @@
   <data name="Submit" xml:space="preserve">
     <value>Submit-US</value>
   </data>
+  <data name="TitleProvince" xml:space="preserve">
+    <value>Quản Lý Tỉnh Thành</value>
+  </data>
 </root>

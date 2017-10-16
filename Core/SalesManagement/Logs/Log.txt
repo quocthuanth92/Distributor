@@ -48,3 +48,48 @@ Stack:	   at Microsoft.EntityFrameworkCore.Internal.DatabaseProviderSelector.Sel
 ----------
 09/10/2017 2:18:50 CH
 Message:	sdsdsdsd
+----------
+11/10/2017 1:58:50 CH
+Message:	sdsdsdsd
+----------
+11/10/2017 1:59:00 CH
+Message:	sdsdsdsd
+----------
+11/10/2017 1:59:07 CH
+Message:	sdsdsdsd
+----------
+11/10/2017 1:59:38 CH
+Message:	sdsdsdsd
+----------
+11/10/2017 3:16:14 CH
+Message:	sdsdsdsd
+----------
+11/10/2017 3:16:18 CH
+Message:	sdsdsdsd
+----------
+12/10/2017 9:04:42 SA
+Message:	sdsdsdsd
+----------
+12/10/2017 9:06:40 SA
+Message:	sdsdsdsd
+----------
+12/10/2017 9:16:18 SA
+Message:	sdsdsdsd
+----------
+12/10/2017 9:16:24 SA
+Message:	sdsdsdsd
+----------
+12/10/2017 9:16:31 SA
+Message:	sdsdsdsd
+----------
+12/10/2017 9:17:30 SA
+Message:	sdsdsdsd
+----------
+12/10/2017 9:17:35 SA
+Message:	sdsdsdsd
+----------
+12/10/2017 9:28:36 SA
+Message:	sdsdsdsd
+----------
+16/10/2017 3:53:47 CH
+Message:	sdsdsdsd
