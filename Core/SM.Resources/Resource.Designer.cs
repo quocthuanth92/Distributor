@@ -206,6 +206,24 @@ namespace SM.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Chỉnh sửa.
+        /// </summary>
+        public static string TitleEdit {
+            get {
+                return ResourceManager.GetString("TitleEdit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Danh Sách.
+        /// </summary>
+        public static string TitleList {
+            get {
+                return ResourceManager.GetString("TitleList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Quản Lý Tỉnh Thành.
         /// </summary>
         public static string TitleProvince {
@@ -215,7 +233,7 @@ namespace SM.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Form upload.
+        ///   Looks up a localized string similar to Khung Tải File Lên.
         /// </summary>
         public static string TitleUpload {
             get {
@@ -224,7 +242,7 @@ namespace SM.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Upload.
+        ///   Looks up a localized string similar to Upload File.
         /// </summary>
         public static string Upload {
             get {

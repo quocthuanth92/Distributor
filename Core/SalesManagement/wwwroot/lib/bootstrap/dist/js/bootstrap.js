@@ -2109,7 +2109,15 @@ if (typeof jQuery === 'undefined') {
 
     var $target = $(selector)
 
-    this.activate($this.closest('li'), $ul)
+//Project Customer
+
+    if ($this.closest('li').length > 0) {
+        this.activate($this.closest('li'), $ul)
+    } else {
+        this.activate($this, $ul)
+    }
+
+    
     this.activate($target, $target.parent(), function () {
       $previous.trigger({
         type: 'hidden.bs.tab',
@@ -2156,6 +2164,16 @@ if (typeof jQuery === 'undefined') {
           .end()
           .find('[data-toggle="tab"]')
             .attr('aria-expanded', true)
+      }
+
+
+      //Project Customer
+      if (element.parent('.ibox-tools-page-heading').length > 0) {
+          element.parent('.ibox-tools-page-heading').find('button').removeClass('btn-primary')
+          element.parent('.ibox-tools-page-heading').find('button').addClass('btn btn-default btn-sm')
+
+          element.removeClass('btn-default')
+          element.addClass('btn-primary')
       }
 
       callback && callback()

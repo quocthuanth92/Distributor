@@ -114,7 +114,7 @@ namespace SalesManagement
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Geographic}/{action=Region}/{id?}");
+                    template: "{controller=Geographic}/{action=Province}/{id?}");
             });
             
         }

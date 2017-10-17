@@ -91,6 +91,11 @@
           element.removeClass('fade')
         }
 
+        //Project Customer
+        if (element.parent('.ibox-tools-page-heading')) {
+            console.log('day roi')
+        }
+
         if ( element.parent('.dropdown-menu') ) {
           element.closest('li.dropdown').addClass('active')
         }

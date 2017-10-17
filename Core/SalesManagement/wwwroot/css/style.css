@@ -3719,7 +3719,7 @@ body.body-small .footer.fixed {
 /* PANELS */
 .page-heading {
   border-top: 0;
-  padding: 0 10px 20px 10px;
+  padding: 0 10px 5px 10px;
 }
 .panel-heading h1,
 .panel-heading h2 {
@@ -8131,7 +8131,7 @@ body.md-skin {
 .md-skin .page-heading {
   border-bottom: none !important;
   border-top: 0;
-  padding: 0 10px 20px 10px;
+  padding: 0 10px 50px 10px;
   box-shadow: 0 1px 1px -1px rgba(0, 0, 0, 0.34), 0 0 6px 0 rgba(0, 0, 0, 0.14);
 }
 .md-skin .full-height-layout .page-heading {
@@ -8552,4 +8552,16 @@ body.md-skin {
   #page-wrapper {
     margin: 0;
   }
+}
+
+
+/* Begin  Custom  Project */
+.page-heading h3 {
+    margin-top: 15px;
+}
+.ibox-tools-page-heading {
+    display: block;
+    float: none;
+    text-align: right;
+    margin-top: 8px;
 }

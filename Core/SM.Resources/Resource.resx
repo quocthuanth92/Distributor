@@ -165,13 +165,19 @@
   <data name="Submit" xml:space="preserve">
     <value>Submit</value>
   </data>
+  <data name="TitleEdit" xml:space="preserve">
+    <value>Chỉnh sửa</value>
+  </data>
+  <data name="TitleList" xml:space="preserve">
+    <value>Danh Sách</value>
+  </data>
   <data name="TitleProvince" xml:space="preserve">
     <value>Quản Lý Tỉnh Thành</value>
   </data>
   <data name="TitleUpload" xml:space="preserve">
-    <value>Form upload</value>
+    <value>Khung Tải File Lên</value>
   </data>
   <data name="Upload" xml:space="preserve">
-    <value>Upload</value>
+    <value>Upload File</value>
   </data>
 </root>
