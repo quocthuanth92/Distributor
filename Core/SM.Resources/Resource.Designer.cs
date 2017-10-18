@@ -62,6 +62,15 @@ namespace SM.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Hoạt động.
+        /// </summary>
+        public static string Active {
+            get {
+                return ResourceManager.GetString("Active", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Age.
         /// </summary>
         public static string Age {
@@ -170,6 +179,33 @@ namespace SM.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Mã Tỉnh.
+        /// </summary>
+        public static string ProvinceCode {
+            get {
+                return ResourceManager.GetString("ProvinceCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tỉnh Thành.
+        /// </summary>
+        public static string ProvinceName {
+            get {
+                return ResourceManager.GetString("ProvinceName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vùng.
+        /// </summary>
+        public static string RegionName {
+            get {
+                return ResourceManager.GetString("RegionName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Xóa.
         /// </summary>
         public static string Remove {
@@ -206,6 +242,15 @@ namespace SM.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Thêm mới.
+        /// </summary>
+        public static string TitleAdd {
+            get {
+                return ResourceManager.GetString("TitleAdd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Chỉnh sửa.
         /// </summary>
         public static string TitleEdit {
@@ -238,6 +283,15 @@ namespace SM.Resources {
         public static string TitleUpload {
             get {
                 return ResourceManager.GetString("TitleUpload", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ngày cập nhật.
+        /// </summary>
+        public static string UpdateDate {
+            get {
+                return ResourceManager.GetString("UpdateDate", resourceCulture);
             }
         }
         

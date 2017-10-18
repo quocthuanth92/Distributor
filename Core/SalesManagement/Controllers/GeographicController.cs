@@ -16,6 +16,7 @@ using SM.Entities;
 using SM.Data.DataServices;
 using SM.Interfaces;
 using SM.Data;
+using SalesManagement.Models.GeoViewModels;
 
 namespace SalesManagement.Controllers
 {
@@ -43,10 +44,20 @@ namespace SalesManagement.Controllers
         // GET: Geographic
         public ActionResult Province()
         {
-            _salesManagementDatabase.Provinces.ToList();
-            ViewBag.abc = Resource.Name;
-            CustomLog.LogError("sdsdsdsd");
-            return View();
+            GeoViewModels geoViewModels = new GeoViewModels();
+            geoViewModels.ListResult = (from p in _salesManagementDatabase.Provinces
+                                        join r in _salesManagementDatabase.Regions
+                                        on p.RegionCode equals r.RegionCode into joined
+                                        from j in joined.DefaultIfEmpty()
+                                        select new ProvinceMV()
+                                        {
+                                            ProvinceCode = p.ProvinceCode,
+                                            ProvinceName = p.ProvinceName,
+                                            RegionName = j.RegionName,
+                                            Active = p.Active,
+                                            UpdateDate = p.UpdateDate
+                                        }).ToList();
+            return View(geoViewModels);
         }
 
 
@@ -56,8 +67,8 @@ namespace SalesManagement.Controllers
             return View();
         }
 
-        // GET: Geographic/Create
-        public ActionResult Create()
+        // GET: Geographic/CreateProvince
+        public ActionResult CreateProvince()
         {
             return View();
         }
