@@ -10,10 +10,10 @@
     </div>
     <div class="col-lg-4">
         <div class="ibox-tools-page-heading">
-            <button type="button" class="btn btn-default btn-sm" data-toggle="tab" href="#edit-form"><i class="fa fa-edit fa-lg"></i>&nbsp;<span class="bold">Add</span></button>
-            <button type="button" class="btn btn-primary btn-sm" data-toggle="tab" href="#filter-form"><i class="fa fa-filter fa-lg"></i>&nbsp;<span class="bold">Filter</span></button>
-            <button type="button" class="btn btn-default btn-sm" data-toggle="tab" href="#upload-form"><i class="fa fa-upload fa-lg"></i>&nbsp;<span class="bold">Upload</span></button>
-            <button type="button" class="btn btn-default btn-sm" data-toggle="tab" href="#tab-1"><i class="fa fa-download fa-lg"></i>&nbsp;<span class="bold">Export</span></button>
+            <button type="button" class="btn btn-default btn-sm" data-toggle="tab" href="#create-form"><i class="fa fa-registered fa-lg"></i>&nbsp;<span class="bold">@Resource.Create</span></button>
+            <button type="button" class="btn btn-primary btn-sm" data-toggle="tab" href="#filter-form"><i class="fa fa-filter fa-lg"></i>&nbsp;<span class="bold">@Resource.Filter</span></button>
+            <button type="button" class="btn btn-default btn-sm" data-toggle="tab" href="#upload-form"><i class="fa fa-upload fa-lg"></i>&nbsp;<span class="bold">@Resource.Upload</span></button>
+            <button type="button" class="btn btn-default btn-sm" data-toggle="tab" href="#tab-1"><i class="fa fa-download fa-lg"></i>&nbsp;<span class="bold">@Resource.Export</span></button>
         </div>
     </div>
 </div>
@@ -175,8 +175,11 @@
                 </div>
             </div>
         </div>
+        <div id="create-form" class="row tab-pane">
+            @{Html.RenderPartial("EditProvincePartial", Model.ProvinceMV);}
+        </div>
         <div id="edit-form" class="row tab-pane">
-            
+            @*@{Html.RenderPartial("EditProvincePartial", Model.ProvinceMV);}*@
         </div>
     </div>
     
@@ -192,8 +195,10 @@
         <link rel="stylesheet" href="~/lib_bower/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" />
         <link rel="stylesheet" href="~/lib/dataTables/datatables.min.css" />
         <link rel="stylesheet" href="~/lib_bower/select2/dist/css/select2.css" />
+        <link rel="stylesheet" href="~/lib/iCheck/custom.css" />
     </environment>
 }
+
 @section Scripts {
     <environment names="Development,Staging,Production">
         <script src="~/lib_bower/jasny-bootstrap/dist/js/jasny-bootstrap.js"></script>
@@ -202,7 +207,9 @@
         <script src="~/lib_bower/codemirror/mode/javascript/javascript.js"></script>
         <script src="~/lib/dataTables/datatables.min.js"></script>
         <script src="~/lib_bower/select2/dist/js/select2.js"></script>
+        <script src="~/lib/iCheck/icheck.min.js"></script>
     </environment>
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
     <script type="text/javascript">
         $(document).ready(function () {
             $(".select2_demo_1").select2();
@@ -247,6 +254,15 @@
             // Toggle the visibility
             column.visible(!column.visible());
         });
+
+        function LoadFormEdit(Id) {
+            var url = '../Geographic/EditProvince?Id=' + Id
+            $('#edit-form').load(url)
+
+            $('.page-heading .ibox-tools-page-heading').find('button').removeClass('btn-primary')
+            $('.page-heading .ibox-tools-page-heading').find('button').addClass('btn btn-default btn-sm')
+
+        }
 
         //$('#btnUpload').click(function () {
 

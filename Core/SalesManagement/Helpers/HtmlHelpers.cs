@@ -7,6 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace SalesManagement
 {
+    public static class HelperSelect
+    {
+
+    }
+
     public static  class HtmlHelpers
     {
 

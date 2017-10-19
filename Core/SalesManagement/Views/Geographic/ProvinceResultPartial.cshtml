@@ -48,7 +48,9 @@
                         foreach (var elm in Model)
                         {
                             <tr class="gradeX">
-                                <td></td>
+                                <td class="center">
+                                    <a data-toggle="tab" href="#edit-form" onclick="LoadFormEdit(@elm.Id)" title="@Resource.Edit"><i class="fa fa-edit fa-lg"></i></a>
+                                </td>
                                 <td>@elm.ProvinceCode</td>
                                 <td>@elm.ProvinceName</td>
                                 <td>@elm.RegionName</td>

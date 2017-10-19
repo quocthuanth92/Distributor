@@ -17,6 +17,7 @@ using SM.Data.DataServices;
 using SM.Interfaces;
 using SM.Data;
 using SalesManagement.Models.GeoViewModels;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace SalesManagement.Controllers
 {
@@ -42,15 +43,29 @@ namespace SalesManagement.Controllers
 
 
         // GET: Geographic
+        [HttpGet]
         public ActionResult Province()
         {
             GeoViewModels geoViewModels = new GeoViewModels();
+            geoViewModels.ProvinceMV = new ProvinceMV()
+            {
+                TitleHeader = Resource.TitleAdd,
+                FormAction = "CreateProvince",
+                SubmitDisplay = Resource.Register,
+                ListRegion = _salesManagementDatabase.Regions.Select(s => new SelectListItem() {
+                    Value = s.RegionCode,
+                    Text = s.RegionName
+                }).ToList()
+            };
+
+
             geoViewModels.ListResult = (from p in _salesManagementDatabase.Provinces
                                         join r in _salesManagementDatabase.Regions
                                         on p.RegionCode equals r.RegionCode into joined
                                         from j in joined.DefaultIfEmpty()
                                         select new ProvinceMV()
                                         {
+                                            Id = p.Id,
                                             ProvinceCode = p.ProvinceCode,
                                             ProvinceName = p.ProvinceName,
                                             RegionName = j.RegionName,
@@ -68,48 +83,93 @@ namespace SalesManagement.Controllers
         }
 
         // GET: Geographic/CreateProvince
+        [HttpGet]
         public ActionResult CreateProvince()
         {
-            return View();
+            ProvinceMV model = new ProvinceMV();
+            model.Active = true;
+            return PartialView("EditProvincePartial", model);
         }
 
-        // POST: Geographic/Create
+        // POST: Geographic/CreateProvince
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult CreateProvince(ProvinceMV provinceMV)
         {
             try
             {
-                // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
+                if (ModelState.IsValid)
+                {
+                    Province province = new Province()
+                    {
+                        ProvinceCode = provinceMV.ProvinceCode,
+                        ProvinceName = provinceMV.ProvinceName,
+                        RegionCode = provinceMV.RegionCode,
+                        CreateDate = DateTime.Now,
+                        UpdateDate = DateTime.Now,
+                        UpdateByCode = "System",
+                        Active = provinceMV.Active
+                    };
+                    _salesManagementDatabase.Provinces.Add(province);
+                    _salesManagementDatabase.SaveChanges();
+                }
+                return RedirectToAction("Province");
             }
             catch
             {
-                return View();
+                return PartialView("EditProvincePartial", provinceMV);
             }
         }
 
-        // GET: Geographic/Edit/5
-        public ActionResult Edit(int id)
+        // GET: Geographic/EditProvince/5
+        public ActionResult EditProvince(int Id)
         {
-            return View();
+            ProvinceMV model = new ProvinceMV();
+            model.TitleHeader = Resource.TitleEdit;
+            model.FormAction = "EditProvince";
+            model.SubmitDisplay = Resource.Update;
+            model.ListRegion = _salesManagementDatabase.Regions.Select(s => new SelectListItem()
+            {
+                Value = s.RegionCode,
+                Text = s.RegionName
+            }).ToList();
+
+            if (Id != 0)
+            {
+                var province = _salesManagementDatabase.Provinces.Where(x => x.Id == Id).FirstOrDefault();
+                if(province != null)
+                {
+                    model.ProvinceCode = province.ProvinceCode;
+                    model.ProvinceName = province.ProvinceName;
+                    model.RegionCode = province.RegionCode;
+                    model.Active = province.Active;
+                }
+            }
+            return PartialView("EditProvincePartial", model);
         }
 
         // POST: Geographic/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult EditProvince(int Id, ProvinceMV provinceMV)
         {
             try
             {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
+                if (ModelState.IsValid)
+                {
+                    var provinceEdit = _salesManagementDatabase.Provinces.Where(x => x.Id == Id).FirstOrDefault();
+                    provinceEdit.ProvinceName = provinceMV.ProvinceName;
+                    provinceEdit.RegionCode = provinceMV.RegionCode;
+                    provinceEdit.Active = provinceMV.Active;
+                    provinceEdit.UpdateDate = DateTime.Now;
+                    _salesManagementDatabase.Provinces.Update(provinceEdit);
+                    _salesManagementDatabase.SaveChanges();
+                }
+                return RedirectToAction("Province");
             }
             catch
             {
-                return View();
+                return PartialView("EditProvincePartial", provinceMV);
             }
         }
 

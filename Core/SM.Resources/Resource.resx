@@ -129,8 +129,20 @@
   <data name="Change" xml:space="preserve">
     <value>Change</value>
   </data>
+  <data name="Create" xml:space="preserve">
+    <value>Thêm Mới</value>
+  </data>
   <data name="DisplayString" xml:space="preserve">
     <value>This is a demo page</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Sửa</value>
+  </data>
+  <data name="Export" xml:space="preserve">
+    <value>Xuất Excel</value>
+  </data>
+  <data name="Filter" xml:space="preserve">
+    <value>Tìm kiếm</value>
   </data>
   <data name="FormUpload" xml:space="preserve">
     <value>Form Upload File</value>
@@ -165,6 +177,9 @@
   <data name="RegionName" xml:space="preserve">
     <value>Vùng</value>
   </data>
+  <data name="Register" xml:space="preserve">
+    <value>Đăng Ký</value>
+  </data>
   <data name="Remove" xml:space="preserve">
     <value>Xóa</value>
   </data>
@@ -191,6 +206,9 @@
   </data>
   <data name="TitleUpload" xml:space="preserve">
     <value>Khung Tải File Lên</value>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>Cập Nhật</value>
   </data>
   <data name="UpdateDate" xml:space="preserve">
     <value>Ngày cập nhật</value>
