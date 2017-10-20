@@ -18,6 +18,7 @@ using System.Globalization;
 using Microsoft.AspNetCore.Localization;
 using SM.Interfaces;
 using SM.Data.DataServices;
+using AutoMapper;
 
 namespace SalesManagement
 {
@@ -67,6 +68,8 @@ namespace SalesManagement
             services.AddMvc()
                 .AddViewLocalization()
                 .AddDataAnnotationsLocalization();
+
+            services.AddAutoMapper();
 
             // Add application services.
             services.AddTransient<IEmailSender, AuthMessageSender>();
