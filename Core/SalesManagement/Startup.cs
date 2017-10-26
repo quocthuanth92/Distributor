@@ -19,6 +19,7 @@ using Microsoft.AspNetCore.Localization;
 using SM.Interfaces;
 using SM.Data.DataServices;
 using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
 
 namespace SalesManagement
 {
@@ -64,12 +65,23 @@ namespace SalesManagement
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<SalesManagementDatabase>()
                 .AddDefaultTokenProviders();
-
-            services.AddMvc()
-                .AddViewLocalization()
-                .AddDataAnnotationsLocalization();
-
+            
+            services.AddResponseCaching();
             services.AddAutoMapper();
+
+            //Config Caching
+
+            services.AddMvc(options =>
+            {
+                var configurationSection = Configuration.GetSection("CacheProfiles");
+                var listCacheProfiles = configurationSection.Get<Dictionary<string, CacheProfile>>();
+                foreach (var keyValuePair in listCacheProfiles)
+                {
+                    options.CacheProfiles.Add(keyValuePair);
+                }
+            }).AddViewLocalization()
+            .AddDataAnnotationsLocalization();
+
 
             // Add application services.
             services.AddTransient<IEmailSender, AuthMessageSender>();
@@ -119,7 +131,8 @@ namespace SalesManagement
                     name: "default",
                     template: "{controller=Geographic}/{action=Province}/{id?}");
             });
-            
+
+            app.UseResponseCaching();
         }
 
 

@@ -8565,3 +8565,40 @@ body.md-skin {
     text-align: right;
     margin-top: 8px;
 }
+
+.ibox-tabs .ibox-content {
+    background-color: #ffffff;
+    color: inherit;
+    padding: 0px 0px 0px 20px;
+    border-color: #e7eaec;
+    border-image: none;
+    border-style: solid solid none;
+    border-width: 1px 0;
+}
+
+.tab-content > .sk-spinner {
+    display: none;
+}
+
+.tab-content.sk-loading {
+    position: relative;
+}
+
+    .tab-content.sk-loading:after {
+        content: '';
+        background-color: rgba(255, 255, 255, 0.7);
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+    .tab-content.sk-loading > .sk-spinner {
+        display: block;
+        position: absolute;
+        top: 40%;
+        left: 0;
+        right: 0;
+        z-index: 2000;
+    }

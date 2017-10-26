@@ -1,0 +1,82 @@
+@{
+    ViewData["Title"] = Resource.TitleProvince;
+}
+@using SM.Resources
+@using SM.Common
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-6">
+        <h3>@Resource.TitleProvince</h3>
+    </div>
+    <div class="col-lg-6">
+        <div class="ibox-tools-page-heading">
+            <a asp-controller="SalesTerritory" asp-action="Create"><button type="button" class="btn btn-default btn-sm"><i class="fa fa-registered fa-lg"></i>&nbsp;<span class="bold">@Resource.Create</span></button></a> 
+            <button type="button" class="btn btn-default btn-sm"><i class="fa fa-filter fa-lg"></i>&nbsp;<span class="bold">@Resource.Filter</span></button>
+            <button type="button" class="btn btn-default btn-sm"><i class="fa fa-upload fa-lg"></i>&nbsp;<span class="bold">@Resource.Upload</span></button>
+            <button type="button" class="btn btn-default btn-sm"><i class="fa fa-download fa-lg"></i>&nbsp;<span class="bold">@Resource.Export</span></button>
+        </div>
+    </div>
+</div>
+<div class="wrapper wrapper-content animated fadeIn">
+    <div id="list-result" class="row">
+    </div>
+</div>
+@section Styles {
+    <environment names="Development,Staging,Production">
+        <link rel="stylesheet" href="~/lib_bower/codemirror/lib/codemirror.css" />
+        <link rel="stylesheet" href="~/lib_bower/codemirror/theme/ambiance.css" />
+        <link rel="stylesheet" href="~/lib_bower/jasny-bootstrap/dist/css/jasny-bootstrap.min.css" />
+        <link rel="stylesheet" href="~/lib_bower/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" />
+        <link rel="stylesheet" href="~/lib/dataTables/datatables.min.css" />
+        <link rel="stylesheet" href="~/lib/iCheck/custom.css" />
+    </environment>
+}
+
+@section Scripts {
+    <environment names="Development,Staging,Production">
+        <script src="~/lib_bower/jasny-bootstrap/dist/js/jasny-bootstrap.js"></script>
+        <script src="~/lib_bower/codemirror/lib/codemirror.js"></script>
+        <script src="~/lib_bower/codemirror/mode/javascript/javascript.js"></script>
+        <script src="~/lib/dataTables/datatables.min.js"></script>
+    </environment>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            table = $('.dataTables-example').DataTable({
+                lengthMenu: [[10, 20, 30, 50], [10, 20, 30, 50]],
+                pageLength: 20,
+                dom: '<"top"<"html5buttons"B> lp<"clear">>rt',
+                language: {
+                    lengthMenu: 'Phân Trang _MENU_ '
+                },
+                buttons: [
+                    { extend: 'csv' },
+                    { extend: 'excel', title: 'ExampleFile' },
+                    { extend: 'pdf', title: 'ExampleFile' },
+                    {
+                        extend: 'print',
+                        customize: function (win) {
+                            $(win.document.body).addClass('white-bg');
+                            $(win.document.body).css('font-size', '10px');
+
+                            $(win.document.body).find('table')
+                                    .addClass('compact')
+                                    .css('font-size', 'inherit');
+                        }
+                    }
+                ]
+
+            });
+        });
+
+        $('.toggle-vis').on('change', function (e) {
+            e.preventDefault();
+
+            // Get the column API object
+            var column = table.column($(this).attr('data-column'));
+            console.log(column);
+
+            // Toggle the visibility
+            column.visible(!column.visible());
+        });
+    </script>
+}

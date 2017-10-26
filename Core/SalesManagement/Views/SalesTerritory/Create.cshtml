@@ -1,0 +1,355 @@
+﻿@{
+    ViewData["Title"] = Resource.TitleProvince;
+}
+@using SM.Resources
+@using SM.Common
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-6">
+        <h3>@Resource.TitleProvince</h3>
+    </div>
+    <div class="col-lg-6">
+        <div class="ibox-tools-page-heading">
+            
+        </div>
+    </div>
+</div>
+<div class="wrapper wrapper-content animated fadeIn">
+    <div id="sales-form" class="row">
+        <div class="col-md-12">
+            <div class="ibox float-e-margins ibox-tabs">
+                <div class="ibox-title">
+                    <h5>@Resource.TitleUpload</h5>
+                    <div class="ibox-tools">
+                        <a class="collapse-link">
+                            <i class="fa fa-chevron-up"></i>
+                        </a>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <i class="fa fa-wrench"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-user">
+                            <li>
+                                <a href="#">Config option 1</a>
+                            </li>
+                            <li>
+                                <a href="#">Config option 2</a>
+                            </li>
+                        </ul>
+                        <a class="close-link">
+                            <i class="fa fa-times"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="ibox-content">
+                    <div class="tabs-container">
+                        <div class="tabs-left">
+                            <ul id="ul-list-chanel" class="nav nav-tabs">
+                                <li class="active"><a data-toggle="tab" href="#tab-chanel-GT"> Kênh GT</a></li>
+                                <li class=""><a data-toggle="tab" href="#tab-chanel-OTC">Kênh OTC</a></li>
+                            </ul>
+                            <div class="tab-content">
+                                <div class="sk-spinner sk-spinner-wave">
+                                    <div class="sk-rect1"></div>
+                                    <div class="sk-rect2"></div>
+                                    <div class="sk-rect3"></div>
+                                    <div class="sk-rect4"></div>
+                                    <div class="sk-rect5"></div>
+                                </div>
+                                <div id="tab-chanel-GT" class="tab-pane active">
+                                    <div class="panel-body">
+                                        <div class="col-md-12">
+                                            <form asp-controller="Account" asp-action="CreateProvince" method="post" class="form-horizontal">
+                                                <div class="form-group">
+                                                    <label class="col-md-2 control-label">Mã Kênh</label>
+                                                    <div class="col-md-3">
+                                                        <input type="text" placeholder="@Resource.ProvinceCode" class="form-control">
+                                                        <span class="text-danger"></span>
+                                                    </div>
+                                                    <label class="col-md-2 control-label">Quốc Gia</label>
+                                                    <div class="col-md-3">
+                                                        <select class="form-control">
+                                                            <option value="1">Option 1</option>
+                                                            <option value="2">Option 2</option>
+                                                            <option value="3">Option 3</option>
+                                                            <option value="4">Option 4</option>
+                                                            <option value="5">Option 5</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-2 control-label">Tên Kênh</label>
+                                                    <div class="col-md-3">
+                                                        <input type="text" placeholder="@Resource.RegionName" class="form-control">
+                                                        <span class="text-danger"></span>
+                                                    </div>
+                                                    <label class="col-md-2 control-label">Status</label>
+                                                    <div class="col-md-3">
+                                                        <select class="form-control">
+                                                            <option value="1">Option 1</option>
+                                                            <option value="2">Option 2</option>
+                                                            <option value="3">Option 3</option>
+                                                            <option value="4">Option 4</option>
+                                                            <option value="5">Option 5</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-2 control-label">Desc</label>
+                                                    <div class="col-md-3">
+                                                        <input type="text" placeholder="@Resource.RegionName" class="form-control">
+                                                        <span class="text-danger"></span>
+                                                    </div>
+                                                    <div class="col-md-offset-2 col-md-3">
+                                                        <div class="checkbox i-checks"><label> <input type="checkbox" value=""><i></i>@Resource.Active</label></div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="col-md-offset-2 col-md-8">
+                                                        <button type="button" class="btn btn-default">Register</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="tabs-container">
+                                                <ul id="ul-sales-territory" class="nav nav-tabs">
+                                                    <li class="active"><a data-toggle="tab" href="#tab-Terr-Structs"> This is tab</a></li>
+                                                    <li class=""><a data-toggle="tab" href="#tab-Terr-Values">This is second tab</a></li>
+                                                </ul>
+                                                <div class="tab-content">
+                                                    <div id="tab-Terr-Structs" class="tab-pane active">
+                                                        <div class="ibox-content">
+                                                            <div class="col-md-6">
+
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <div id="jstree1">
+                                                                    <ul>
+                                                                        <li class="jstree-open">
+                                                                            Admin theme
+                                                                            <ul>
+                                                                                <li>
+                                                                                    css
+                                                                                    <ul>
+                                                                                        <li data-jstree='{"type":"css"}'>animate.css</li>
+                                                                                        <li data-jstree='{"type":"css"}'>bootstrap.css</li>
+                                                                                        <li data-jstree='{"type":"css"}'>style.css</li>
+                                                                                    </ul>
+                                                                                </li>
+                                                                                <li>
+                                                                                    email-templates
+                                                                                    <ul>
+                                                                                        <li data-jstree='{"type":"html"}'>action.html</li>
+                                                                                        <li data-jstree='{"type":"html"}'>alert.html</li>
+                                                                                        <li data-jstree='{"type":"html"}'>billing.html</li>
+                                                                                    </ul>
+                                                                                </li>
+                                                                                <li>
+                                                                                    fonts
+                                                                                    <ul>
+                                                                                        <li data-jstree='{"type":"svg"}'>glyphicons-halflings-regular.eot</li>
+                                                                                        <li data-jstree='{"type":"svg"}'>glyphicons-halflings-regular.svg</li>
+                                                                                        <li data-jstree='{"type":"svg"}'>glyphicons-halflings-regular.ttf</li>
+                                                                                        <li data-jstree='{"type":"svg"}'>glyphicons-halflings-regular.woff</li>
+                                                                                    </ul>
+                                                                                </li>
+                                                                                <li class="jstree-open">
+                                                                                    img
+                                                                                    <ul>
+                                                                                        <li data-jstree='{"type":"img"}'>profile_small.jpg</li>
+                                                                                        <li data-jstree='{"type":"img"}'>angular_logo.png</li>
+                                                                                        <li class="text-navy" data-jstree='{"type":"img"}'>html_logo.png</li>
+                                                                                        <li class="text-navy" data-jstree='{"type":"img"}'>mvc_logo.png</li>
+                                                                                    </ul>
+                                                                                </li>
+                                                                                <li class="jstree-open">
+                                                                                    js
+                                                                                    <ul>
+                                                                                        <li data-jstree='{"type":"js"}'>inspinia.js</li>
+                                                                                        <li data-jstree='{"type":"js"}'>bootstrap.js</li>
+                                                                                        <li data-jstree='{"type":"js"}'>jquery-2.1.1.js</li>
+                                                                                        <li data-jstree='{"type":"js"}'>jquery-ui.custom.min.js</li>
+                                                                                        <li class="text-navy" data-jstree='{"type":"js"}'>jquery-ui-1.10.4.min.js</li>
+                                                                                    </ul>
+                                                                                </li>
+                                                                                <li data-jstree='{"type":"html"}'> affix.html</li>
+                                                                                <li data-jstree='{"type":"html"}'> dashboard.html</li>
+                                                                            </ul>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div id="tab-Terr-Values" class="tab-pane">
+                                                        <div class="ibox-content">
+                                                            <div class="col-md-6">
+
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <div id="jstree1">
+                                                                    <ul>
+                                                                        <li class="jstree-open">
+                                                                            Admin theme
+                                                                            <ul>
+                                                                                <li>
+                                                                                    css
+                                                                                    <ul>
+                                                                                        <li data-jstree='{"type":"css"}'>animate.css</li>
+                                                                                        <li data-jstree='{"type":"css"}'>bootstrap.css</li>
+                                                                                        <li data-jstree='{"type":"css"}'>style.css</li>
+                                                                                    </ul>
+                                                                                </li>
+                                                                                <li>
+                                                                                    email-templates
+                                                                                    <ul>
+                                                                                        <li data-jstree='{"type":"html"}'>action.html</li>
+                                                                                        <li data-jstree='{"type":"html"}'>alert.html</li>
+                                                                                        <li data-jstree='{"type":"html"}'>billing.html</li>
+                                                                                    </ul>
+                                                                                </li>
+                                                                                <li>
+                                                                                    fonts
+                                                                                    <ul>
+                                                                                        <li data-jstree='{"type":"svg"}'>glyphicons-halflings-regular.eot</li>
+                                                                                        <li data-jstree='{"type":"svg"}'>glyphicons-halflings-regular.svg</li>
+                                                                                        <li data-jstree='{"type":"svg"}'>glyphicons-halflings-regular.ttf</li>
+                                                                                        <li data-jstree='{"type":"svg"}'>glyphicons-halflings-regular.woff</li>
+                                                                                    </ul>
+                                                                                </li>
+                                                                                <li class="jstree-open">
+                                                                                    img
+                                                                                    <ul>
+                                                                                        <li data-jstree='{"type":"img"}'>profile_small.jpg</li>
+                                                                                        <li data-jstree='{"type":"img"}'>angular_logo.png</li>
+                                                                                        <li class="text-navy" data-jstree='{"type":"img"}'>html_logo.png</li>
+                                                                                        <li class="text-navy" data-jstree='{"type":"img"}'>mvc_logo.png</li>
+                                                                                    </ul>
+                                                                                </li>
+                                                                                <li class="jstree-open">
+                                                                                    js
+                                                                                    <ul>
+                                                                                        <li data-jstree='{"type":"js"}'>inspinia.js</li>
+                                                                                        <li data-jstree='{"type":"js"}'>bootstrap.js</li>
+                                                                                        <li data-jstree='{"type":"js"}'>jquery-2.1.1.js</li>
+                                                                                        <li data-jstree='{"type":"js"}'>jquery-ui.custom.min.js</li>
+                                                                                        <li class="text-navy" data-jstree='{"type":"js"}'>jquery-ui-1.10.4.min.js</li>
+                                                                                    </ul>
+                                                                                </li>
+                                                                                <li data-jstree='{"type":"html"}'> affix.html</li>
+                                                                                <li data-jstree='{"type":"html"}'> dashboard.html</li>
+                                                                                <li data-jstree='{"type":"html"}'> buttons.html</li>
+                                                                                <li data-jstree='{"type":"html"}'> calendar.html</li>
+                                                                                <li data-jstree='{"type":"html"}'> contacts.html</li>
+                                                                                <li data-jstree='{"type":"html"}'> css_animation.html</li>
+                                                                                <li class="text-navy" data-jstree='{"type":"html"}'> flot_chart.html</li>
+                                                                                <li class="text-navy" data-jstree='{"type":"html"}'> google_maps.html</li>
+                                                                                <li data-jstree='{"type":"html"}'> icons.html</li>
+                                                                                <li data-jstree='{"type":"html"}'> inboice.html</li>
+                                                                                <li data-jstree='{"type":"html"}'> login.html</li>
+                                                                                <li data-jstree='{"type":"html"}'> mailbox.html</li>
+                                                                                <li data-jstree='{"type":"html"}'> profile.html</li>
+                                                                                <li class="text-navy" data-jstree='{"type":"html"}'> register.html</li>
+                                                                                <li data-jstree='{"type":"html"}'> timeline.html</li>
+                                                                                <li data-jstree='{"type":"html"}'> video.html</li>
+                                                                                <li data-jstree='{"type":"html"}'> widgets.html</li>
+                                                                            </ul>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="tab-chanel-OTC" class="tab-pane">
+                                    <div class="panel-body">
+                                        <strong>Donec quam felis</strong>
+
+                                        <p>
+                                            Thousand unknown plants are noticed by me: when I hear the buzz of the little world among the stalks, and grow familiar with the countless indescribable forms of the insects
+                                            and flies, then I feel the presence of the Almighty, who formed us in his own image, and the breath
+                                        </p>
+
+                                        <p>
+                                            I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite
+                                            sense of mere tranquil existence, that I neglect my talents. I should be incapable of drawing a single stroke at the present moment; and yet.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="list-result" class="row">
+    </div>
+</div>
+@section Styles {
+    <environment names="Development,Staging,Production">
+        <link rel="stylesheet" href="~/lib_bower/codemirror/lib/codemirror.css" />
+        <link rel="stylesheet" href="~/lib_bower/codemirror/theme/ambiance.css" />
+        <link rel="stylesheet" href="~/lib_bower/jasny-bootstrap/dist/css/jasny-bootstrap.min.css" />
+        <link rel="stylesheet" href="~/lib_bower/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" />
+        <link rel="stylesheet" href="~/lib_bower/select2/dist/css/select2.css" />
+        <link rel="stylesheet" href="~/lib/iCheck/custom.css" />
+    </environment>
+}
+
+@section Scripts {
+    <environment names="Development,Staging,Production">
+        <script src="~/lib_bower/jasny-bootstrap/dist/js/jasny-bootstrap.js"></script>
+        <script src="~/lib_bower/codemirror/lib/codemirror.js"></script>
+        <link rel="stylesheet" href="~/lib_bower/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" />
+        <script src="~/lib_bower/codemirror/mode/javascript/javascript.js"></script>
+        <script src="~/lib_bower/jstree/dist/jstree.js"></script>
+        <script src="~/lib_bower/select2/dist/js/select2.js"></script>
+        <script src="~/lib/iCheck/icheck.min.js"></script>
+    </environment>
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $('#ul-list-chanel').on('click', 'li', function () {
+                $('.tabs-left').children('.tab-content').toggleClass('sk-loading');
+            })
+
+            $('#jstree1').jstree({
+                'core': {
+                    'check_callback': true
+                },
+                'plugins': ['types', 'dnd'],
+                'types': {
+                    'default': {
+                        'icon': 'fa fa-folder'
+                    },
+                    'html': {
+                        'icon': 'fa fa-file-code-o'
+                    },
+                    'svg': {
+                        'icon': 'fa fa-file-picture-o'
+                    },
+                    'css': {
+                        'icon': 'fa fa-file-code-o'
+                    },
+                    'img': {
+                        'icon': 'fa fa-file-image-o'
+                    },
+                    'js': {
+                        'icon': 'fa fa-file-text-o'
+                    }
+
+                }
+            });
+
+        });
+
+    </script>
+}

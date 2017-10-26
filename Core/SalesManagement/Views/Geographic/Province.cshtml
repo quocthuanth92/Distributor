@@ -5,10 +5,10 @@
 @using SM.Resources
 @using SM.Common
 <div class="row wrapper border-bottom white-bg page-heading">
-    <div class="col-lg-8">
+    <div class="col-lg-6">
         <h3>@Resource.TitleProvince</h3>
     </div>
-    <div class="col-lg-4">
+    <div class="col-lg-6">
         <div class="ibox-tools-page-heading">
             <button type="button" class="btn btn-default btn-sm" data-toggle="tab" href="#create-form"><i class="fa fa-registered fa-lg"></i>&nbsp;<span class="bold">@Resource.Create</span></button>
             <button type="button" class="btn btn-primary btn-sm" data-toggle="tab" href="#filter-form"><i class="fa fa-filter fa-lg"></i>&nbsp;<span class="bold">@Resource.Filter</span></button>
@@ -45,6 +45,7 @@
                         </div>
                     </div>
                     <div class="ibox-content">
+                        @(DateTime.Now.ToString("fff"))
                         <form class="form-horizontal">
                             <div class="form-group">
                                 <label class="col-lg-2 control-label">select2_demo_1</label>

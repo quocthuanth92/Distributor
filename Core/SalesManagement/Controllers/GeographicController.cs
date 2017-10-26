@@ -34,11 +34,12 @@ namespace SalesManagement.Controllers
 
         #region Region Management
         // GET: Geographic
+        [HttpGet, ResponseCache(Duration = 300, Location = ResponseCacheLocation.Any)]
         public ActionResult Region()
         {
+            ViewBag.Time = DateTime.Now.ToString();
             _salesManagementDatabase.Provinces.ToList();
             ViewBag.abc = Resource.Name;
-            CustomLog.LogError("sdsdsdsd");
             return View();
         }
 
@@ -102,9 +103,10 @@ namespace SalesManagement.Controllers
 
         #region Province Management
         // GET: Province
-        [HttpGet]
+        [HttpGet, ResponseCache(CacheProfileName = "Cache1Hour")]
         public ActionResult Province()
         {
+            ViewBag.Time = DateTime.Now.ToString();
             GeoViewModels geoViewModels = new GeoViewModels();
             geoViewModels.ProvinceMV = new ProvinceMV()
             {
@@ -192,6 +194,7 @@ namespace SalesManagement.Controllers
                 var province = _salesManagementDatabase.Provinces.Where(x => x.Id == Id).FirstOrDefault();
                 if (province != null)
                 {
+                    model.Id = province.Id;
                     model.ProvinceCode = province.ProvinceCode;
                     model.ProvinceName = province.ProvinceName;
                     model.RegionCode = province.RegionCode;
@@ -204,13 +207,13 @@ namespace SalesManagement.Controllers
         // POST: Geographic/EditProvince/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult EditProvince(int Id, ProvinceMV provinceMV)
+        public ActionResult EditProvince(ProvinceMV provinceMV)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    var provinceEdit = _salesManagementDatabase.Provinces.Where(x => x.Id == Id).FirstOrDefault();
+                    var provinceEdit = _salesManagementDatabase.Provinces.Where(x => x.Id == provinceMV.Id).FirstOrDefault();
                     provinceEdit.ProvinceName = provinceMV.ProvinceName;
                     provinceEdit.RegionCode = provinceMV.RegionCode;
                     provinceEdit.Active = provinceMV.Active;

@@ -28,7 +28,7 @@
             <form asp-controller="Geographic" asp-action="@Model.FormAction" method="post" class="form-horizontal">
                 <p>Sign in today for more expirience.</p>
                 <div asp-validation-summary="None" class="text-danger"></div>
-                <input asp-for="Id"  type="hidden" value="@Model.Id" />
+                <input asp-for="Id" type="hidden" value="@Model.Id" />
                 <div class="form-group">
                     <label class="col-lg-2 control-label">@Resource.ProvinceCode</label>
                     <div class="col-lg-4">

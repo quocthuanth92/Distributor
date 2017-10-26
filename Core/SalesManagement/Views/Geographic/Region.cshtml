@@ -37,7 +37,7 @@
                     </div>
                 </div>
                 <div class="ibox-content">
-                    <p>Sign in today for more expirience.</p>
+                    <p>Sign in today for more expirience. @(DateTime.Now.ToString("fff"))</p>
                     @using(Html.BeginForm("Import", "Geographic", FormMethod.Post, new { @enctype = "multipart/form-data", @class = "form-horizontal" }))
                     {
                         <div class="form-group">
