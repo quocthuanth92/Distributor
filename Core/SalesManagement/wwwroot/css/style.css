@@ -3632,7 +3632,7 @@ video {
   padding: 0 20px;
 }
 .wrapper-content {
-  padding: 20px 10px 40px;
+  padding: 10px 0px 40px;
 }
 #page-wrapper {
   padding: 0 15px;
@@ -3901,7 +3901,7 @@ code {
 }
 .ibox {
   clear: both;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
   margin-top: 0;
   padding: 0;
 }
@@ -8569,7 +8569,7 @@ body.md-skin {
 .ibox-tabs .ibox-content {
     background-color: #ffffff;
     color: inherit;
-    padding: 0px 0px 0px 20px;
+    padding: 10px 10px 10px 20px;
     border-color: #e7eaec;
     border-image: none;
     border-style: solid solid none;
@@ -8602,3 +8602,27 @@ body.md-skin {
         right: 0;
         z-index: 2000;
     }
+
+
+.tab-content-custome .tabs-container .tabs-left > .nav-tabs,
+.tab-content-custome .tabs-container .tabs-right > .nav-tabs {
+    width: 15%;
+}
+
+.tab-content-custome .tabs-container .tabs-left .panel-body {
+    width: 85%;
+    margin-left: 15%;
+}
+
+.tab-content-custome .tabs-container .tabs-right .panel-body {
+    width: 85%;
+    margin-right: 15%;
+}
+
+.tab-content-child .padding-top-bottom-10 {
+    padding: 10px 0px 0px 10px;
+}
+
+.font-size-16 li{
+    font-size: 16px;
+}

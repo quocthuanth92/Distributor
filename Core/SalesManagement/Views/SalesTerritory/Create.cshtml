@@ -5,7 +5,7 @@
 @using SM.Common
 <div class="row wrapper border-bottom white-bg page-heading">
     <div class="col-lg-6">
-        <h3>@Resource.TitleProvince</h3>
+        <h3>Quản Lý Phân Cấp Bán Hàng</h3>
     </div>
     <div class="col-lg-6">
         <div class="ibox-tools-page-heading">
@@ -13,38 +13,17 @@
         </div>
     </div>
 </div>
-<div class="wrapper wrapper-content animated fadeIn">
+<div class="wrapper wrapper-content  animated fadeIn">
     <div id="sales-form" class="row">
         <div class="col-md-12">
-            <div class="ibox float-e-margins ibox-tabs">
-                <div class="ibox-title">
-                    <h5>@Resource.TitleUpload</h5>
-                    <div class="ibox-tools">
-                        <a class="collapse-link">
-                            <i class="fa fa-chevron-up"></i>
-                        </a>
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                            <i class="fa fa-wrench"></i>
-                        </a>
-                        <ul class="dropdown-menu dropdown-user">
-                            <li>
-                                <a href="#">Config option 1</a>
-                            </li>
-                            <li>
-                                <a href="#">Config option 2</a>
-                            </li>
-                        </ul>
-                        <a class="close-link">
-                            <i class="fa fa-times"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="ibox-content">
+            <div class="ibox float-e-margins ibox-tabs tab-content-custome">
+                <div class="ibox-content ibox-content-no-header">
                     <div class="tabs-container">
                         <div class="tabs-left">
                             <ul id="ul-list-chanel" class="nav nav-tabs">
                                 <li class="active"><a data-toggle="tab" href="#tab-chanel-GT"> Kênh GT</a></li>
                                 <li class=""><a data-toggle="tab" href="#tab-chanel-OTC">Kênh OTC</a></li>
+                                <li class=""><a data-toggle="tab"><i class="fa-plus"></i> New </a></li>
                             </ul>
                             <div class="tab-content">
                                 <div class="sk-spinner sk-spinner-wave">
@@ -59,120 +38,99 @@
                                         <div class="col-md-12">
                                             <form asp-controller="Account" asp-action="CreateProvince" method="post" class="form-horizontal">
                                                 <div class="form-group">
-                                                    <label class="col-md-2 control-label">Mã Kênh</label>
+                                                    <label class="col-md-1 control-label">Mã Kênh</label>
                                                     <div class="col-md-3">
-                                                        <input type="text" placeholder="@Resource.ProvinceCode" class="form-control">
+                                                        <input type="text" placeholder="Mã Kênh" value="GT" class="form-control">
                                                         <span class="text-danger"></span>
                                                     </div>
-                                                    <label class="col-md-2 control-label">Quốc Gia</label>
+                                                    <label class="col-md-1 control-label">Quốc Gia</label>
                                                     <div class="col-md-3">
                                                         <select class="form-control">
-                                                            <option value="1">Option 1</option>
-                                                            <option value="2">Option 2</option>
-                                                            <option value="3">Option 3</option>
-                                                            <option value="4">Option 4</option>
-                                                            <option value="5">Option 5</option>
+                                                            <option value="1" selected>Việt Nam</option>
+                                                            <option value="2">Myanmar</option>
+                                                            <option value="3">Thái Lan</option>
+                                                            <option value="4">Lào</option>
+                                                            <option value="5">Campuchia</option>
+                                                        </select>
+                                                    </div>
+                                                    <label class="col-md-1 control-label">Status</label>
+                                                    <div class="col-md-3">
+                                                        <select class="form-control">
+                                                            <option value="1">Open</option>
+                                                            <option value="2">Hold</option>
+                                                            <option value="3" selected>Release</option>
+                                                            <option value="4">Close</option>
                                                         </select>
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label class="col-md-2 control-label">Tên Kênh</label>
+                                                    <label class="col-md-1 control-label">Tên Kênh</label>
                                                     <div class="col-md-3">
-                                                        <input type="text" placeholder="@Resource.RegionName" class="form-control">
+                                                        <input type="text" value="Kênh GT" class="form-control">
                                                         <span class="text-danger"></span>
                                                     </div>
-                                                    <label class="col-md-2 control-label">Status</label>
+                                                    <label class="col-md-1 control-label">Desc</label>
                                                     <div class="col-md-3">
-                                                        <select class="form-control">
-                                                            <option value="1">Option 1</option>
-                                                            <option value="2">Option 2</option>
-                                                            <option value="3">Option 3</option>
-                                                            <option value="4">Option 4</option>
-                                                            <option value="5">Option 5</option>
-                                                        </select>
+                                                        <input type="text" value="Kênh bán hàng truyền thống, Từ NPP đến các điểm bán nhỏ lẻs" class="form-control">
+                                                        <span class="text-danger"></span>
+                                                    </div>
+                                                    <div class="col-md-offset-1 col-md-3">
+                                                        <div class="checkbox i-checks"><label> <input type="checkbox" value="" checked><i></i>@Resource.Active</label></div>
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label class="col-md-2 control-label">Desc</label>
-                                                    <div class="col-md-3">
-                                                        <input type="text" placeholder="@Resource.RegionName" class="form-control">
-                                                        <span class="text-danger"></span>
-                                                    </div>
-                                                    <div class="col-md-offset-2 col-md-3">
-                                                        <div class="checkbox i-checks"><label> <input type="checkbox" value=""><i></i>@Resource.Active</label></div>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <div class="col-md-offset-2 col-md-8">
-                                                        <button type="button" class="btn btn-default">Register</button>
+                                                    <div class="col-md-offset-1 col-md-11">
+                                                        <button type="button" class="btn btn-primary">Lưu</button>
+                                                        <button type="button" class="btn btn-primary">Release</button>
                                                     </div>
                                                 </div>
                                             </form>
                                         </div>
-                                        <div class="col-md-12">
+                                        <div class="col-md-12 tab-content-child">
                                             <div class="tabs-container">
                                                 <ul id="ul-sales-territory" class="nav nav-tabs">
-                                                    <li class="active"><a data-toggle="tab" href="#tab-Terr-Structs"> This is tab</a></li>
-                                                    <li class=""><a data-toggle="tab" href="#tab-Terr-Values">This is second tab</a></li>
+                                                    <li class="active"><a data-toggle="tab" href="#tab-Terr-Structs">Cấu Trúc</a></li>
+                                                    <li class=""><a data-toggle="tab" href="#tab-Terr-Values">Phân Cấp Bán Hàng</a></li>
                                                 </ul>
                                                 <div class="tab-content">
                                                     <div id="tab-Terr-Structs" class="tab-pane active">
-                                                        <div class="ibox-content">
-                                                            <div class="col-md-6">
-
+                                                        <div class="padding-top-bottom-10 ibox-content">
+                                                            <div class="col-md-5 no-padding border-right">
+                                                                <form asp-controller="Account" asp-action="CreateProvince" method="post" class="form-horizontal">
+                                                                    <div class="form-group">
+                                                                        <label class="col-sm-3 control-label">Mã Code</label>
+                                                                        <div class="col-sm-8">
+                                                                            <input type="text" placeholder="Mã Code" value="Region" class="form-control">
+                                                                            <span class="text-danger"></span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label class="col-sm-3 control-label">Tên Cấu Trúc</label>
+                                                                        <div class="col-sm-8">
+                                                                            <input type="text" value="Vùng" class="form-control">
+                                                                            <span class="text-danger"></span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <div class="col-sm-offset-3 col-sm-8">
+                                                                            <button type="button" class="btn btn-primary">Thêm</button>
+                                                                            <button type="button" class="btn btn-danger">Removes</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </form>
                                                             </div>
-                                                            <div class="col-md-6">
-                                                                <div id="jstree1">
+                                                            <div class="col-md-7 no-padding">
+                                                                <div id="jstree1" class="font-size-16">
                                                                     <ul>
                                                                         <li class="jstree-open">
-                                                                            Admin theme
+                                                                            GT - Viet Nam
                                                                             <ul>
                                                                                 <li>
-                                                                                    css
+                                                                                    Vùng
                                                                                     <ul>
-                                                                                        <li data-jstree='{"type":"css"}'>animate.css</li>
-                                                                                        <li data-jstree='{"type":"css"}'>bootstrap.css</li>
-                                                                                        <li data-jstree='{"type":"css"}'>style.css</li>
+                                                                                        <li>Khu Vực</li>
                                                                                     </ul>
                                                                                 </li>
-                                                                                <li>
-                                                                                    email-templates
-                                                                                    <ul>
-                                                                                        <li data-jstree='{"type":"html"}'>action.html</li>
-                                                                                        <li data-jstree='{"type":"html"}'>alert.html</li>
-                                                                                        <li data-jstree='{"type":"html"}'>billing.html</li>
-                                                                                    </ul>
-                                                                                </li>
-                                                                                <li>
-                                                                                    fonts
-                                                                                    <ul>
-                                                                                        <li data-jstree='{"type":"svg"}'>glyphicons-halflings-regular.eot</li>
-                                                                                        <li data-jstree='{"type":"svg"}'>glyphicons-halflings-regular.svg</li>
-                                                                                        <li data-jstree='{"type":"svg"}'>glyphicons-halflings-regular.ttf</li>
-                                                                                        <li data-jstree='{"type":"svg"}'>glyphicons-halflings-regular.woff</li>
-                                                                                    </ul>
-                                                                                </li>
-                                                                                <li class="jstree-open">
-                                                                                    img
-                                                                                    <ul>
-                                                                                        <li data-jstree='{"type":"img"}'>profile_small.jpg</li>
-                                                                                        <li data-jstree='{"type":"img"}'>angular_logo.png</li>
-                                                                                        <li class="text-navy" data-jstree='{"type":"img"}'>html_logo.png</li>
-                                                                                        <li class="text-navy" data-jstree='{"type":"img"}'>mvc_logo.png</li>
-                                                                                    </ul>
-                                                                                </li>
-                                                                                <li class="jstree-open">
-                                                                                    js
-                                                                                    <ul>
-                                                                                        <li data-jstree='{"type":"js"}'>inspinia.js</li>
-                                                                                        <li data-jstree='{"type":"js"}'>bootstrap.js</li>
-                                                                                        <li data-jstree='{"type":"js"}'>jquery-2.1.1.js</li>
-                                                                                        <li data-jstree='{"type":"js"}'>jquery-ui.custom.min.js</li>
-                                                                                        <li class="text-navy" data-jstree='{"type":"js"}'>jquery-ui-1.10.4.min.js</li>
-                                                                                    </ul>
-                                                                                </li>
-                                                                                <li data-jstree='{"type":"html"}'> affix.html</li>
-                                                                                <li data-jstree='{"type":"html"}'> dashboard.html</li>
                                                                             </ul>
                                                                         </li>
                                                                     </ul>
@@ -181,77 +139,97 @@
                                                         </div>
                                                     </div>
                                                     <div id="tab-Terr-Values" class="tab-pane">
-                                                        <div class="ibox-content">
-                                                            <div class="col-md-6">
-
+                                                        <div class="padding-top-bottom-10 ibox-content">
+                                                            <div class="col-md-5 no-padding border-right">
+                                                                <form asp-controller="Account" asp-action="CreateProvince" method="post" class="form-horizontal">
+                                                                    <div class="form-group">
+                                                                        <label class="col-sm-3 control-label">Mã Code</label>
+                                                                        <div class="col-sm-8">
+                                                                            <input type="text" placeholder="Mã Code" value="Region" class="form-control">
+                                                                            <span class="text-danger"></span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label class="col-sm-3 control-label">Tên</label>
+                                                                        <div class="col-sm-8">
+                                                                            <input type="text" value="Vùng" class="form-control">
+                                                                            <span class="text-danger"></span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <div class="col-sm-offset-3 col-md-8">
+                                                                            <div class="checkbox i-checks"><label> <input type="checkbox" value="" checked><i></i>@Resource.Active</label></div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <div class="col-sm-offset-3 col-sm-8">
+                                                                            <button type="button" class="btn btn-primary">Thêm</button>
+                                                                            <button type="button" class="btn btn-danger">Removes</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </form>
+                                                                <hr />
+                                                                <form asp-controller="Account" asp-action="CreateProvince" method="post" class="form-horizontal">
+                                                                    <table class="table table-striped table-bordered table-hover dataTables-example">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th>Action</th>
+                                                                                <th>Tên nhân viên</th>
+                                                                                <th>Ngày bắt đầu</th>
+                                                                                <th>Ngày kết thúc</th>
+                                                                                <th>Mặc định</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr class="gradeX">
+                                                                                <td></td>
+                                                                                <td>Nguyễn Văn A</td>
+                                                                                <td>2017-11-01</td>
+                                                                                <td></td>
+                                                                                <td class="text-center"><input type="radio" name="isDefault" checked /></td>
+                                                                            </tr>
+                                                                            <tr class="gradeX">
+                                                                                <td></td>
+                                                                                <td>Nguyễn Văn B</td>
+                                                                                <td>2017-11-01</td>
+                                                                                <td></td>
+                                                                                <td class="text-center"><input type="radio" name="isDefault" /></tdclass="center">
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </form>
                                                             </div>
-                                                            <div class="col-md-6">
-                                                                <div id="jstree1">
+                                                            <div class="col-md-7 no-padding">
+                                                                <div id="jstree2" class="font-size-16">
                                                                     <ul>
                                                                         <li class="jstree-open">
-                                                                            Admin theme
+                                                                            GT - Viet Nams
                                                                             <ul>
                                                                                 <li>
-                                                                                    css
+                                                                                    Miền Bắc
                                                                                     <ul>
-                                                                                        <li data-jstree='{"type":"css"}'>animate.css</li>
-                                                                                        <li data-jstree='{"type":"css"}'>bootstrap.css</li>
-                                                                                        <li data-jstree='{"type":"css"}'>style.css</li>
+                                                                                        <li>Đông Bắc</li>
+                                                                                        <li>Tây Bắc</li>
+                                                                                        <li>Hà Nội</li>
                                                                                     </ul>
                                                                                 </li>
                                                                                 <li>
-                                                                                    email-templates
+                                                                                    Miền Trung
                                                                                     <ul>
-                                                                                        <li data-jstree='{"type":"html"}'>action.html</li>
-                                                                                        <li data-jstree='{"type":"html"}'>alert.html</li>
-                                                                                        <li data-jstree='{"type":"html"}'>billing.html</li>
+                                                                                        <li>Bắc Miền Trung</li>
+                                                                                        <li>Nam Miền Trung 1</li>
+                                                                                        <li>Nam Miền Trung 2</li>
                                                                                     </ul>
                                                                                 </li>
                                                                                 <li>
-                                                                                    fonts
+                                                                                    Miền Nam
                                                                                     <ul>
-                                                                                        <li data-jstree='{"type":"svg"}'>glyphicons-halflings-regular.eot</li>
-                                                                                        <li data-jstree='{"type":"svg"}'>glyphicons-halflings-regular.svg</li>
-                                                                                        <li data-jstree='{"type":"svg"}'>glyphicons-halflings-regular.ttf</li>
-                                                                                        <li data-jstree='{"type":"svg"}'>glyphicons-halflings-regular.woff</li>
+                                                                                        <li>Nam Miền Đông</li>
+                                                                                        <li>Nam Miền Trung</li>
+                                                                                        <li>Hồ Chí Minh</li>
+                                                                                        <li>Nam Miền Bắc</li>
                                                                                     </ul>
                                                                                 </li>
-                                                                                <li class="jstree-open">
-                                                                                    img
-                                                                                    <ul>
-                                                                                        <li data-jstree='{"type":"img"}'>profile_small.jpg</li>
-                                                                                        <li data-jstree='{"type":"img"}'>angular_logo.png</li>
-                                                                                        <li class="text-navy" data-jstree='{"type":"img"}'>html_logo.png</li>
-                                                                                        <li class="text-navy" data-jstree='{"type":"img"}'>mvc_logo.png</li>
-                                                                                    </ul>
-                                                                                </li>
-                                                                                <li class="jstree-open">
-                                                                                    js
-                                                                                    <ul>
-                                                                                        <li data-jstree='{"type":"js"}'>inspinia.js</li>
-                                                                                        <li data-jstree='{"type":"js"}'>bootstrap.js</li>
-                                                                                        <li data-jstree='{"type":"js"}'>jquery-2.1.1.js</li>
-                                                                                        <li data-jstree='{"type":"js"}'>jquery-ui.custom.min.js</li>
-                                                                                        <li class="text-navy" data-jstree='{"type":"js"}'>jquery-ui-1.10.4.min.js</li>
-                                                                                    </ul>
-                                                                                </li>
-                                                                                <li data-jstree='{"type":"html"}'> affix.html</li>
-                                                                                <li data-jstree='{"type":"html"}'> dashboard.html</li>
-                                                                                <li data-jstree='{"type":"html"}'> buttons.html</li>
-                                                                                <li data-jstree='{"type":"html"}'> calendar.html</li>
-                                                                                <li data-jstree='{"type":"html"}'> contacts.html</li>
-                                                                                <li data-jstree='{"type":"html"}'> css_animation.html</li>
-                                                                                <li class="text-navy" data-jstree='{"type":"html"}'> flot_chart.html</li>
-                                                                                <li class="text-navy" data-jstree='{"type":"html"}'> google_maps.html</li>
-                                                                                <li data-jstree='{"type":"html"}'> icons.html</li>
-                                                                                <li data-jstree='{"type":"html"}'> inboice.html</li>
-                                                                                <li data-jstree='{"type":"html"}'> login.html</li>
-                                                                                <li data-jstree='{"type":"html"}'> mailbox.html</li>
-                                                                                <li data-jstree='{"type":"html"}'> profile.html</li>
-                                                                                <li class="text-navy" data-jstree='{"type":"html"}'> register.html</li>
-                                                                                <li data-jstree='{"type":"html"}'> timeline.html</li>
-                                                                                <li data-jstree='{"type":"html"}'> video.html</li>
-                                                                                <li data-jstree='{"type":"html"}'> widgets.html</li>
                                                                             </ul>
                                                                         </li>
                                                                     </ul>
@@ -268,17 +246,195 @@
                                 </div>
                                 <div id="tab-chanel-OTC" class="tab-pane">
                                     <div class="panel-body">
-                                        <strong>Donec quam felis</strong>
-
-                                        <p>
-                                            Thousand unknown plants are noticed by me: when I hear the buzz of the little world among the stalks, and grow familiar with the countless indescribable forms of the insects
-                                            and flies, then I feel the presence of the Almighty, who formed us in his own image, and the breath
-                                        </p>
-
-                                        <p>
-                                            I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite
-                                            sense of mere tranquil existence, that I neglect my talents. I should be incapable of drawing a single stroke at the present moment; and yet.
-                                        </p>
+                                        <div class="col-md-12">
+                                            <form asp-controller="Account" asp-action="CreateProvince" method="post" class="form-horizontal">
+                                                <div class="form-group">
+                                                    <label class="col-md-1 control-label">Mã Kênh</label>
+                                                    <div class="col-md-3">
+                                                        <input type="text" placeholder="Mã Kênh" value="OTC" class="form-control">
+                                                        <span class="text-danger"></span>
+                                                    </div>
+                                                    <label class="col-md-1 control-label">Quốc Gia</label>
+                                                    <div class="col-md-3">
+                                                        <select class="form-control">
+                                                            <option value="1" selected>Việt Nam</option>
+                                                            <option value="2">Myanmar</option>
+                                                            <option value="3">Thái Lan</option>
+                                                            <option value="4">Lào</option>
+                                                            <option value="5">Campuchia</option>
+                                                        </select>
+                                                    </div>
+                                                    <label class="col-md-1 control-label">Status</label>
+                                                    <div class="col-md-3">
+                                                        <select class="form-control">
+                                                            <option value="1">Open</option>
+                                                            <option value="2">Hold</option>
+                                                            <option value="3" selected>Release</option>
+                                                            <option value="4">Close</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-1 control-label">Tên Kênh</label>
+                                                    <div class="col-md-3">
+                                                        <input type="text" value="Kênh OTC" class="form-control">
+                                                        <span class="text-danger"></span>
+                                                    </div>
+                                                    <label class="col-md-1 control-label">Desc</label>
+                                                    <div class="col-md-3">
+                                                        <input type="text" value="Kênh bán hàng cho các siêu thị" class="form-control">
+                                                        <span class="text-danger"></span>
+                                                    </div>
+                                                    <div class="col-md-offset-1 col-md-3">
+                                                        <div class="checkbox i-checks"><label> <input type="checkbox" value="" checked><i></i>@Resource.Active</label></div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="col-md-offset-1 col-md-11">
+                                                        <button type="button" class="btn btn-primary">Lưu</button>
+                                                        <button type="button" class="btn btn-primary">Release</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="col-md-12 tab-content-child">
+                                            <div class="tabs-container">
+                                                <ul id="ul-sales-territory" class="nav nav-tabs">
+                                                    <li class="active"><a data-toggle="tab" href="#tab-Terr-Structs-OCT">Cấu Trúc</a></li>
+                                                    <li class=""><a data-toggle="tab" href="#tab-Terr-Values-OCT">Phân Cấp Bán Hàng</a></li>
+                                                </ul>
+                                                <div class="tab-content">
+                                                    <div id="tab-Terr-Structs-OCT" class="tab-pane active">
+                                                        <div class="padding-top-bottom-10 ibox-content">
+                                                            <div class="col-md-5 no-padding border-right">
+                                                                <form asp-controller="Account" asp-action="CreateProvince" method="post" class="form-horizontal">
+                                                                    <div class="form-group">
+                                                                        <label class="col-sm-3 control-label">Mã Code</label>
+                                                                        <div class="col-sm-8">
+                                                                            <input type="text" placeholder="Mã Code" value="Region" class="form-control">
+                                                                            <span class="text-danger"></span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label class="col-sm-3 control-label">Tên Cấu Trúc</label>
+                                                                        <div class="col-sm-8">
+                                                                            <input type="text" value="Vùng" class="form-control">
+                                                                            <span class="text-danger"></span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <div class="col-sm-offset-3 col-sm-8">
+                                                                            <button type="button" class="btn btn-primary">Thêm</button>
+                                                                            <button type="button" class="btn btn-danger">Removes</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </form>
+                                                            </div>
+                                                            <div class="col-md-7 no-padding">
+                                                                <div id="jstree1" class="font-size-16">
+                                                                    <ul>
+                                                                        <li class="jstree-open">
+                                                                            GT - Viet Nam
+                                                                            <ul>
+                                                                                <li>
+                                                                                    Vùng
+                                                                                </li>
+                                                                            </ul>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div id="tab-Terr-Values-OCT" class="tab-pane">
+                                                        <div class="padding-top-bottom-10 ibox-content">
+                                                            <div class="col-md-5 no-padding border-right">
+                                                                <form asp-controller="Account" asp-action="CreateProvince" method="post" class="form-horizontal">
+                                                                    <div class="form-group">
+                                                                        <label class="col-sm-3 control-label">Mã Code</label>
+                                                                        <div class="col-sm-8">
+                                                                            <input type="text" placeholder="Mã Code" value="Region" class="form-control">
+                                                                            <span class="text-danger"></span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label class="col-sm-3 control-label">Tên</label>
+                                                                        <div class="col-sm-8">
+                                                                            <input type="text" value="Vùng" class="form-control">
+                                                                            <span class="text-danger"></span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <div class="col-sm-offset-3 col-md-8">
+                                                                            <div class="checkbox i-checks"><label> <input type="checkbox" value="" checked><i></i>@Resource.Active</label></div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <div class="col-sm-offset-3 col-sm-8">
+                                                                            <button type="button" class="btn btn-primary">Thêm</button>
+                                                                            <button type="button" class="btn btn-danger">Removes</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </form>
+                                                                <hr />
+                                                                <form asp-controller="Account" asp-action="CreateProvince" method="post" class="form-horizontal">
+                                                                    <table class="table table-striped table-bordered table-hover dataTables-example">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th>Action</th>
+                                                                                <th>Tên nhân viên</th>
+                                                                                <th>Ngày bắt đầu</th>
+                                                                                <th>Ngày kết thúc</th>
+                                                                                <th>Mặc định</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr class="gradeX">
+                                                                                <td></td>
+                                                                                <td>Nguyễn Văn A</td>
+                                                                                <td>2017-11-01</td>
+                                                                                <td></td>
+                                                                                <td class="text-center"><input type="radio" name="isDefault" checked /></td>
+                                                                            </tr>
+                                                                            <tr class="gradeX">
+                                                                                <td></td>
+                                                                                <td>Nguyễn Văn B</td>
+                                                                                <td>2017-11-01</td>
+                                                                                <td></td>
+                                                                                <td class="text-center"><input type="radio" name="isDefault" /></tdclass="center">
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </form>
+                                                            </div>
+                                                            <div class="col-md-7 no-padding">
+                                                                <div id="jstree2" class="font-size-16">
+                                                                    <ul>
+                                                                        <li class="jstree-open">
+                                                                            GT - Viet Nams
+                                                                            <ul>
+                                                                                <li>
+                                                                                    Miền Bắc
+                                                                                </li>
+                                                                                <li>
+                                                                                    Miền Trung
+                                                                                </li>
+                                                                                <li>
+                                                                                    Miền Nam Trung Bộ
+                                                                                </li>
+                                                                                <li>
+                                                                                    Miền Nam
+                                                                                </li>
+                                                                            </ul>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -319,35 +475,10 @@
 
             $('#ul-list-chanel').on('click', 'li', function () {
                 $('.tabs-left').children('.tab-content').toggleClass('sk-loading');
+                setTimeout(function () {
+                    $('.tabs-left').children('.tab-content').toggleClass('sk-loading');
+                }, 500);
             })
-
-            $('#jstree1').jstree({
-                'core': {
-                    'check_callback': true
-                },
-                'plugins': ['types', 'dnd'],
-                'types': {
-                    'default': {
-                        'icon': 'fa fa-folder'
-                    },
-                    'html': {
-                        'icon': 'fa fa-file-code-o'
-                    },
-                    'svg': {
-                        'icon': 'fa fa-file-picture-o'
-                    },
-                    'css': {
-                        'icon': 'fa fa-file-code-o'
-                    },
-                    'img': {
-                        'icon': 'fa fa-file-image-o'
-                    },
-                    'js': {
-                        'icon': 'fa fa-file-text-o'
-                    }
-
-                }
-            });
 
         });
 
