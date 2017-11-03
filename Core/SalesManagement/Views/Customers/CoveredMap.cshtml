@@ -1,0 +1,138 @@
+﻿@{
+    ViewData["Title"] = "GoogleMaps";
+}
+<div class="insider-map">
+    <div id="map" class="google-map" style="min-height: 870px;" ></div>
+    <div class="map-option-full left blue">
+        <div class="map-insider">
+            <div class="map-option-header">
+                <div class="block-header block-theme">
+                    <div class="item w-full bg-rgba-25">
+                        <button class="map-toggle-left btn-transparent fl">
+                            <i class="fa-arrow-left icon-white"></i>
+                        </button>
+                        <button class="map-toggle-right btn-transparent fl">
+                            <i class="fa-arrow-right icon-white"></i>
+                        </button>
+                        <button class="btn-screenmode btn-transparent fr">
+                            <i class="icon-fullscreen icon-white"></i>
+                        </button>
+                    </div>
+                    <div class="item">
+                        <ul class="nav nav-tabs map-tabs">
+                            <li class="active"><a data-toggle="tab" href="#MapRoute">Route</a></li>
+                            <li><a data-toggle="tab" href="#MapRouteDetail">Detail</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="map-option-toggle">
+                <i class="fa-arrow-right"></i>
+            </div>
+            <div class="map-option-content">
+                <div class="tab-content map-tab-content">
+                    <div id="MapRoute" class="tab-pane fade in active">
+                        <div class="map-option-item">
+                            <div class="toggle-content">
+                                <label>CriteriaColor: </label>
+                                <select class="form-control">
+                                    <option value="1">Option 1</option>
+                                    <option value="2">Option 2</option>
+                                    <option value="3">Option 3</option>
+                                    <option value="4">Option 4</option>
+                                    <option value="5">Option 5</option>
+                                </select>
+                                <label><input id="isMultiMCP" type="checkbox" />EditMultiRoute</label>
+                                <label><input id="isOutletArea" type="checkbox" />OutletInArea</label>
+                            </div>
+
+                        </div>
+                        <div class="map-option-item toggle-box">
+                            <div class="map-option-title">
+                                <h3>GeoSalesBox</h3>
+                                <button class="toggle-button btn-transparent pos-static p-5 fr">
+                                    <i class="icon-up icon-black"></i>
+                                </button>
+                            </div>
+                            <div class="toggle-content table-responsive">
+                                <div class="block-header border-top border-bottom p-10">
+                                    <div class="input-box">
+                                        <input id="input-search" type="text" placeholder="Nhập route..." />
+                                        <button id="btn-clear-search" class="btn-transparent"><i class="icon-search"></i></button>
+                                    </div>
+                                </div>
+                                <div class="w-100pr border-none">
+                                    <div id="treeview-sale-area" class="treeview zone-treeview"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="MapRouteDetail" class="tab-pane fade">
+                        <div class="map-option-item toggle-box">
+                            <div class="map-option-title">
+                                <button id="DowTemplateOutlet" type="button">DowTemplateOutlet</button>
+                                <button id="SuggestRoute" type="button">SuggestRoute</button>
+                                <button id="SetMCP" type="button" data-backdrop="static" data-keyboard="false">SetMCP</button>
+                            </div>
+                            <div class="toggle-content table-responsive">
+                                <div id="dayInWeek" class="block-header border-top border-bottom p-10">
+                                    <label style="color:crimson"><input type="radio" name="SubRoute" value="Add" />ColorAdd</label>
+                                    <label style="color:darkturquoise"><input type="radio" name="SubRoute" value="Mon" />Monday</label>
+                                    <label style="color:fuchsia"><input type="radio" name="SubRoute" value="Tue" />Tuesday</label>
+                                    <label style="color:blue"><input type="radio" name="SubRoute" value="Wed" />Wednesday</label>
+                                    <label style="color:chartreuse"><input type="radio" name="SubRoute" value="Thu" />Thursday</label>
+                                    <label style="color:brown"><input type="radio" name="SubRoute" value="Fri" />Friday</label>
+                                    <label style="color:darkorange"><input type="radio" name="SubRoute" value="Sat" />Staturday</label>
+                                    <label style="color:black"><input type="radio" name="SubRoute" value="Sun" />Sunday</label>
+                                    <label style="color:forestgreen"><input type="radio" name="SubRoute" value="MultiDay" />MultiDay</label>
+                                </div>
+                                <div id="box-add-outlet" class="block-header">
+                                    <label>AddOutlet: </label><input id="outletSearch" type="text" placeholder="Nhập Outlet..." />
+                                    <button id="AddOutlet" type="button">AddOutlet</button>
+                                </div>
+                                <div class="map-list list-outlet">
+                                    <ul id="listOutletBox" style="cursor: pointer;"></ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    <!--
+     You need to include this script on any page that has a Google Map.
+     When using Google Maps on your own site you MUST signup for your own API key at:
+     https://developers.google.com/maps/documentation/javascript/tutorial#api_key
+     After your sign up replace the key in the URL below..
+    -->
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDNSySOWH44uGaEBJsEIa7nDl0CUXpcDO0"></script>
+
+    <script type="text/javascript">
+        // When the window has finished loading google map
+        google.maps.event.addDomListener(window, 'load', init);
+
+        function init() {
+            // Options for Google map
+            // More info see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
+
+            var mapOptions = {
+                center: new google.maps.LatLng(16, 106),
+                zoom: 7,
+                minZoom: 3
+            };
+
+            // Get all html elements for map
+            var mapElement = document.getElementById('map');
+
+            // Create the Google Map using elements
+            var map = new google.maps.Map(mapElement, mapOptions);
+        }
+    </script>
+}
