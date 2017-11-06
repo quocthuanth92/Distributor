@@ -32,6 +32,19 @@ namespace SalesManagement.Controllers
             _salesManagementDatabase = salesManagementDatabase;
         }
 
+        #region Countries Management
+        // GET: Geographic
+        [HttpGet, ResponseCache(Duration = 300, Location = ResponseCacheLocation.Any)]
+        public ActionResult Countries()
+        {
+            ViewBag.Time = DateTime.Now.ToString();
+            _salesManagementDatabase.Provinces.ToList();
+            ViewBag.abc = Resource.Name;
+            return View();
+        }
+
+        #endregion
+
         #region Region Management
         // GET: Geographic
         [HttpGet, ResponseCache(Duration = 300, Location = ResponseCacheLocation.Any)]
@@ -305,6 +318,41 @@ namespace SalesManagement.Controllers
         }
 
         #endregion
-        
+
+        #region District Management
+        // GET: Geographic
+        [HttpGet, ResponseCache(Duration = 300, Location = ResponseCacheLocation.Any)]
+        public ActionResult District()
+        {
+            ViewBag.Time = DateTime.Now.ToString();
+            return View();
+        }
+
+
+        #endregion
+
+        #region Ward Management
+        // GET: Geographic
+        [HttpGet, ResponseCache(Duration = 300, Location = ResponseCacheLocation.Any)]
+        public ActionResult Ward()
+        {
+            ViewBag.Time = DateTime.Now.ToString();
+            return View();
+        }
+
+
+        #endregion
+
+        #region Sales Province Management
+        // GET: Geographic
+        [HttpGet, ResponseCache(Duration = 300, Location = ResponseCacheLocation.Any)]
+        public ActionResult SalesProvince()
+        {
+            ViewBag.Time = DateTime.Now.ToString();
+            return View();
+        }
+
+
+        #endregion
     }
 }

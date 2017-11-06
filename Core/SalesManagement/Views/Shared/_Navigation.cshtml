@@ -25,6 +25,17 @@
                     IN+
                 </div>
             </li>
+            <li class="@Html.IsSelected(controller: "Geographic")">
+                <a href="#"><i class="fa fa-globe"></i> <span class="nav-label" data-i18n="nav.dashboard">Quản Lý Địa Lý</span> <span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse @Html.IsSelected(controller: "Geographic", cssClass: "in")">
+                    <li class="@Html.IsSelected(action: "Countries")"><a href="@Url.Action("Countries", "Geographic")">Quốc Gia</a></li>
+                    <li class="@Html.IsSelected(action: "Region")"><a href="@Url.Action("Region", "Geographic")">Vùng Miền</a></li>
+                    <li class="@Html.IsSelected(action: "Province")"><a href="@Url.Action("Province", "Geographic")">Tỉnh Thành</a></li>
+                    <li class="@Html.IsSelected(action: "District")"><a href="@Url.Action("District", "Geographic")">Quận/Huyện</a></li>
+                    <li class="@Html.IsSelected(action: "Ward")"><a href="@Url.Action("Ward", "Geographic")">Phường/Xã</a></li>
+                    <li class="@Html.IsSelected(action: "SalesProvince")"><a href="@Url.Action("SalesProvince", "Geographic")">Địa Bàn Bán Hàng</a></li>
+                </ul>
+            </li>
             <li class="@Html.IsSelected(controller: "Dashboards")">
                 <a href="@Url.Action("Dashboard_1", "Dashboards")"><i class="fa fa-th-large"></i> <span class="nav-label" data-i18n="nav.dashboard">Dashboards</span> <span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level collapse @Html.IsSelected(controller: "Dashboards", cssClass: "in")">
