@@ -129,7 +129,7 @@ namespace SalesManagement
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Geographic}/{action=Province}/{id?}");
+                    template: "{controller=Dashboards}/{action=Index}/{id?}");
             });
 
             app.UseResponseCaching();

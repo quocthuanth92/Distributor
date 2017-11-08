@@ -8,6 +8,11 @@ namespace SalesManagement.Controllers
 {
     public class DashboardsController : Controller
     {
+        public IActionResult Index()
+        {
+            return View();
+        }
+
         public IActionResult Dashboard_1()
         {
             return View();
